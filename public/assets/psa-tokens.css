@@ -1,0 +1,313 @@
+/* ============================================================
+   PSA — Perintis Sarana Astra
+   Foundations: Colors + Typography
+   ============================================================
+   Brand: Marine subcontractor (Batam, Indonesia) serving the
+   global Oil & Gas industry. Visual feel is industrial-corporate
+   meets modern marketing: confident, trustworthy, gritty when
+   showing the work, polished when presenting it.
+   ============================================================ */
+
+/* ---------- Type imports ---------- */
+/* Display: a condensed industrial sans (Barlow Condensed) — chosen to
+   evoke marine / oil & gas signage and engineering documentation,
+   per the look used by Saipem, Schlumberger, McDermott and similar
+   offshore brands. Italic is used for emphasis runs in display
+   headlines ("Powering the Future of *Oil & Gas*"). */
+/* Body / UI: a neutral geometric grotesk. Inter pairs cleanly with
+   the condensed display face. */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ============================================================
+     COLOR — Brand
+     ============================================================
+     Pulled from the logo: deep purple-navy wordmark + bright
+     vermilion swoosh. Purple carries weight & authority; red is
+     used sparingly as an accent (CTA, underlines, key numbers).
+     ============================================================ */
+
+  /* Brand purple — primary, used for surfaces, headings, marks */
+  --psa-purple-50:  #f1f0fb;
+  --psa-purple-100: #ddd9f4;
+  --psa-purple-200: #b9b0e6;
+  --psa-purple-300: #948ad7;
+  --psa-purple-400: #6f63c8;
+  --psa-purple-500: #4d40b3;
+  --psa-purple-600: #3a2e9a;   /* logo wordmark */
+  --psa-purple-700: #2e2580;
+  --psa-purple-800: #221b62;
+  --psa-purple-900: #181246;
+  --psa-purple-950: #14103a;
+
+  /* Brand red — accent only, never as background for body copy */
+  --psa-red-50:  #ffeceb;
+  --psa-red-100: #ffd0cc;
+  --psa-red-200: #ffa39c;
+  --psa-red-300: #f76b62;
+  --psa-red-400: #ec3d31;
+  --psa-red-500: #e32127;       /* logo swoosh */
+  --psa-red-600: #c2161d;
+  --psa-red-700: #9d1218;
+  --psa-red-800: #7a0e13;
+  --psa-red-900: #570a0e;
+
+  /* ============================================================
+     COLOR — Neutrals (warm-cool greys, biased slightly cool to
+     pair with purple)
+     ============================================================ */
+  --psa-ink-0:    #ffffff;
+  --psa-ink-25:   #fafafb;
+  --psa-ink-50:   #f4f4f7;
+  --psa-ink-100:  #e9e9ee;
+  --psa-ink-200:  #d4d4dd;
+  --psa-ink-300:  #b3b3c0;
+  --psa-ink-400:  #8a8a9a;
+  --psa-ink-500:  #62626f;
+  --psa-ink-600:  #46464f;
+  --psa-ink-700:  #34344a;
+  --psa-ink-800:  #26263a;
+  --psa-ink-900:  #1c1c2e;
+
+  /* ============================================================
+     COLOR — Semantic
+     ============================================================ */
+  --psa-success: #1f8a5b;
+  --psa-warning: #d99320;
+  --psa-danger:  var(--psa-red-500);
+  --psa-info:    var(--psa-purple-500);
+
+  /* ============================================================
+     COLOR — Tokens (use these in components, not raw scales)
+     ============================================================ */
+  --color-bg:        var(--psa-ink-0);
+  --color-bg-soft:   var(--psa-ink-25);
+  --color-bg-muted:  var(--psa-ink-50);
+  --color-bg-invert: var(--psa-purple-900);
+
+  --color-fg:        var(--psa-ink-900);     /* primary text */
+  --color-fg-muted:  var(--psa-ink-600);     /* body, secondary */
+  --color-fg-subtle: var(--psa-ink-400);     /* meta / labels */
+  --color-fg-invert: var(--psa-ink-0);
+
+  --color-border:        var(--psa-ink-100);
+  --color-border-strong: var(--psa-ink-200);
+
+  --color-brand:       var(--psa-purple-600);
+  --color-brand-hover: var(--psa-purple-700);
+  --color-brand-soft:  var(--psa-purple-50);
+  --color-accent:      var(--psa-red-500);
+  --color-accent-hover:var(--psa-red-600);
+
+  /* On-image overlay tints (used over hero photography) */
+  --color-overlay-purple: color-mix(in oklab, var(--psa-purple-900) 70%, transparent);
+  --color-overlay-dark:   rgba(13, 10, 43, 0.55);
+
+  /* ============================================================
+     TYPOGRAPHY — Families
+     ============================================================ */
+  --font-display: 'Barlow Condensed', 'Oswald', 'Arial Narrow', 'Helvetica Neue Condensed', sans-serif;
+  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ============================================================
+     TYPOGRAPHY — Type scale (modular, mobile-first)
+     ============================================================ */
+  --text-xs:    12px;
+  --text-sm:    14px;
+  --text-base:  16px;
+  --text-md:    18px;
+  --text-lg:    20px;
+  --text-xl:    24px;
+  --text-2xl:   30px;
+  --text-3xl:   38px;
+  --text-4xl:   48px;
+  --text-5xl:   64px;
+  --text-6xl:   80px;
+  --text-7xl:   104px;
+
+  /* Line heights */
+  --lh-tight:  1.05;
+  --lh-snug:   1.2;
+  --lh-normal: 1.45;
+  --lh-relaxed:1.6;
+
+  /* Letter spacing */
+  --tracking-display: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.04em;
+  --tracking-eyebrow: 0.18em;
+
+  /* ============================================================
+     SPACING (4px base)
+     ============================================================ */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ============================================================
+     RADII
+     ============================================================ */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 22px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+
+  /* ============================================================
+     SHADOWS — flat → lifted
+     ============================================================ */
+  --shadow-xs: 0 1px 2px rgba(13, 10, 43, 0.06);
+  --shadow-sm: 0 1px 3px rgba(13, 10, 43, 0.07), 0 1px 2px rgba(13, 10, 43, 0.04);
+  --shadow-md: 0 4px 12px rgba(13, 10, 43, 0.08), 0 2px 4px rgba(13, 10, 43, 0.04);
+  --shadow-lg: 0 12px 32px rgba(13, 10, 43, 0.10), 0 4px 8px rgba(13, 10, 43, 0.05);
+  --shadow-xl: 0 24px 56px rgba(13, 10, 43, 0.14);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.5);
+
+  /* Brand-tinted ring (focus, active outlines) */
+  --ring-brand: 0 0 0 4px color-mix(in oklab, var(--psa-purple-500) 30%, transparent);
+  --ring-accent: 0 0 0 4px color-mix(in oklab, var(--psa-red-500) 30%, transparent);
+
+  /* ============================================================
+     MOTION
+     ============================================================ */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:    140ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1320px;
+
+  --gutter: clamp(16px, 4vw, 32px);
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES
+   ============================================================ */
+
+html { color-scheme: light; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-relaxed);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Eyebrow / kicker — shows above section headlines */
+.psa-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Display headlines — slab serif, occasional italic for emphasis */
+.psa-display, h1.psa-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(40px, 6vw, var(--text-7xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-fg);
+  text-wrap: balance;
+}
+.psa-display em,
+h1.psa-display em { font-style: italic; font-weight: 700; color: var(--psa-purple-700); }
+
+h1, .psa-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-5xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+h2, .psa-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-4xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+h3, .psa-h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  line-height: var(--lh-snug);
+}
+h4, .psa-h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  line-height: var(--lh-snug);
+}
+
+/* Body */
+p, .psa-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-relaxed);
+  color: var(--color-fg-muted);
+}
+.psa-body-lg {
+  font-size: var(--text-md);
+  line-height: var(--lh-relaxed);
+  color: var(--color-fg-muted);
+}
+.psa-meta {
+  font-size: var(--text-sm);
+  color: var(--color-fg-subtle);
+}
+
+/* Stats — large display numerals (used for "20+ clients" etc.) */
+.psa-stat {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(48px, 6vw, var(--text-6xl));
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+  color: var(--color-fg);
+}
+.psa-stat-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-fg-subtle);
+}
+
+/* Code / mono */
+code, kbd, .psa-mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
