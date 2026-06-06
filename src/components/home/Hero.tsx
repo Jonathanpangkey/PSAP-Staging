@@ -12,6 +12,10 @@ export default function Hero() {
   const currentTimeRef = useRef(0)
   const targetTimeRef = useRef(0)
 
+  // Throttle refs
+  const lastScrollTime = useRef(0)
+  const lastMoveTime = useRef(0)
+
   const dragRef = useRef({
     active: false,
     startX: 0,
@@ -28,7 +32,6 @@ export default function Hero() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // ── Resize canvas to match viewport ──────────────────────────────────────
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -36,13 +39,9 @@ export default function Hero() {
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    // ── Draw loop: lerp currentTime toward targetTime ─────────────────────────
-    // This is the key to smoothness — we never jump currentTime directly,
-    // we ease toward it at ~0.12 lerp factor per frame
     const drawLoop = () => {
       if (video.readyState >= 2 && video.duration) {
         if (Math.abs(targetTimeRef.current - currentTimeRef.current) > 0.001) {
-          // No lerping/easing (factor of 1) -> 100% instant response
           currentTimeRef.current = targetTimeRef.current
           video.currentTime = currentTimeRef.current
         }
@@ -58,8 +57,12 @@ export default function Hero() {
       if (bar) bar.style.height = `${progress * 100}%`
     }
 
-    // ── Scroll scrubbing ──────────────────────────────────────────────────────
+    // ── Scroll scrubbing (throttle 16ms ≈ 60fps) ──────────────────────────────
     const onScroll = () => {
+      const now = performance.now()
+      if (now - lastScrollTime.current < 16) return
+      lastScrollTime.current = now
+
       if (!video.duration) return
       const totalScroll = section.offsetHeight - window.innerHeight
       const scrolled = Math.max(0, window.scrollY - section.offsetTop)
@@ -69,7 +72,6 @@ export default function Hero() {
     }
     window.addEventListener('scroll', onScroll, { passive: true })
 
-    // ── Mouse drag scrubbing ──────────────────────────────────────────────────
     const onMouseDown = (e: MouseEvent) => {
       dragRef.current = {
         active: true,
@@ -80,6 +82,10 @@ export default function Hero() {
     }
 
     const onMouseMove = (e: MouseEvent) => {
+      const now = performance.now()
+      if (now - lastMoveTime.current < 16) return
+      lastMoveTime.current = now
+
       if (!dragRef.current.active || !video.duration) return
       const dx = e.clientX - dragRef.current.startX
       const delta = (dx / 600) * video.duration
@@ -98,7 +104,6 @@ export default function Hero() {
       sticky.style.cursor = 'grab'
     }
 
-    // ── Touch drag scrubbing ──────────────────────────────────────────────────
     const onTouchStart = (e: TouchEvent) => {
       dragRef.current = {
         active: true,
@@ -108,6 +113,10 @@ export default function Hero() {
     }
 
     const onTouchMove = (e: TouchEvent) => {
+      const now = performance.now()
+      if (now - lastMoveTime.current < 16) return
+      lastMoveTime.current = now
+
       if (!dragRef.current.active || !video.duration) return
       const dx = e.touches[0].clientX - dragRef.current.startX
       const delta = (dx / 600) * video.duration
@@ -150,10 +159,7 @@ export default function Hero() {
   return (
     <div ref={sectionRef} className="hero-scroll-container">
       <div ref={stickyRef} className="hero hero-sticky">
-
-        {/* ── Video & Canvas Background ─────────────────────────────────────────── */}
         <div className="hero-bg" aria-hidden="true">
-          {/* Hidden video — canvas reads frames from this */}
           <video
             ref={videoRef}
             src="/assets/home/[PSAP2] Hero Landing Page.mp4"
@@ -164,19 +170,28 @@ export default function Hero() {
             onLoadedMetadata={(e) => {
               const v = e.currentTarget
               v.currentTime = v.duration
-              setTimeout(() => { v.currentTime = 0 }, 150)
+              setTimeout(() => {
+                v.currentTime = 0
+              }, 150)
             }}
           />
-
-          {/* Canvas renders the frames */}
-          <canvas
-            ref={canvasRef}
-            className="hero-bg-canvas"
-            aria-hidden="true"
-          />
+          <canvas ref={canvasRef} className="hero-bg-canvas" aria-hidden="true" />
         </div>
 
         <div className="hero-grid-lines" aria-hidden="true" />
+
+        <div className="hero-drag-hint" aria-hidden="true">
+          <svg width="28" height="14" viewBox="0 0 28 14" fill="none">
+            <path
+              d="M1 7h26M1 7l5-5M1 7l5 5M27 7l-5-5M27 7l-5 5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span>Drag or scroll to explore</span>
+        </div>
 
         <div className="hero-grid">
           <div>
@@ -213,7 +228,6 @@ export default function Hero() {
             <span>Scroll</span>
           </div>
         </div>
-
       </div>
     </div>
   )
