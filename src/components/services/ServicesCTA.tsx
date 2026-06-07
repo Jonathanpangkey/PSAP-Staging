@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export function ServicesCTA() {
+export default function ServicesCTA() {
   return (
     <section className="cta-band">
       <div className="cta-band-inner">
@@ -9,7 +9,7 @@ export function ServicesCTA() {
           <h2 className="display md light">
             Need a <em>specific</em><br />service?
           </h2>
-          <p className="lead light" style={{ marginTop: 18 }}>
+          <p className="lead light sec-lead">
             Contact our team to discuss requirements and receive a customised solution.
           </p>
         </div>

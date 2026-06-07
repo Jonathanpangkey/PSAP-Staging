@@ -26,7 +26,7 @@ export default function WhyServicesMatter() {
         <h2 className="display md">
           Why Our Services<br />Matter
         </h2>
-        <p className="lead" style={{ marginTop: 18 }}>
+        <p className="lead sec-lead">
           Three commitments that shape how we approach every project.
         </p>
         <div className="matter-grid">

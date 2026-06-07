@@ -201,12 +201,12 @@ export default function Hero() {
               <br />
               <em>Engineered to Last</em>.
             </h1>
-            <p className="lead" style={{ marginTop: 24 }}>
+            <p className="lead hero-lead">
               PSA delivers blasting &amp; painting, manpower supply, scaffolding, equipment, and
               HVAC / mechanical-electrical work for Marine Oil and Gas operators across the
               Asia-Pacific.
             </p>
-            <div style={{ display: 'flex', gap: 12, marginTop: 28, flexWrap: 'wrap' }}>
+            <div className="hero-cta-group">
               <Link className="btn btn-primary" href="/contact">
                 Contact Us <span className="arrow">→</span>
               </Link>

@@ -6,7 +6,7 @@ export default function Clients() {
       <div className="container">
         <div className="eyebrow">Our Clients</div>
         <h2 className="display md">Our Clients</h2>
-        <p className="lead" style={{ marginTop: 18 }}>
+        <p className="lead sec-lead">
           Long-standing partnerships with the operators and yards driving the Asia-Pacific Oil &amp; Gas industry.
         </p>
         <div className="clients-row">

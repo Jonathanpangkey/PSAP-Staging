@@ -32,10 +32,10 @@ export default function WhyPSA() {
               <br />
               <em>coming back to</em>.
             </h2>
-            <p className="lead" style={{ marginTop: 18 }}>
+            <p className="lead sec-lead">
               Three commitments that shape how we work — at every layer of the partnership.
             </p>
-            <div style={{ marginTop: 28 }}>
+            <div className="sec-cta">
               <Link className="btn btn-primary" href="/about">
                 About PSA <span className="arrow">→</span>
               </Link>

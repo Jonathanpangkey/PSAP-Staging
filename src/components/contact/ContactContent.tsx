@@ -31,15 +31,15 @@ export default function ContactContent() {
 
           {/* Left — contact info */}
           <div>
-            <h3 className="display sm" style={{ margin: '0 0 14px' }}>
+            <h3 className="display sm contact-heading">
               PT Perintis Sarana Astra
             </h3>
-            <p className="lead" style={{ marginBottom: 32 }}>
+            <p className="lead contact-lead">
               Marine Oil and Gas contractor serving operators across the Asia-Pacific.
             </p>
 
             {/* Email */}
-            <div className="contact-card" style={{ marginBottom: 18 }}>
+            <div className="contact-card contact-card--mb">
               <h4>Email</h4>
               <div className="row">
                 <div className="ico">@</div>
@@ -66,7 +66,7 @@ export default function ContactContent() {
             </div>
 
             {/* WhatsApp · Phone */}
-            <div className="contact-card" style={{ marginBottom: 18 }}>
+            <div className="contact-card contact-card--mb">
               <h4>WhatsApp · Phone</h4>
               <div className="row">
                 <div className="ico">☎</div>
@@ -118,10 +118,10 @@ export default function ContactContent() {
           <div>
             <div className="form-card">
               <div className="eyebrow">Send Us A Message</div>
-              <h3 className="display sm" style={{ margin: '0 0 12px' }}>
+              <h3 className="display sm contact-heading">
                 Send Us a Message
               </h3>
-              <p className="lead" style={{ margin: '0 0 24px' }}>
+              <p className="lead contact-form-lead">
                 Fill out the form and we'll get back to you as soon as possible.
               </p>
               <form className="form-grid" onSubmit={handleSubmit}>
@@ -186,7 +186,7 @@ export default function ContactContent() {
                   />
                 </div>
                 <div className="full">
-                  <button className="btn btn-primary" type="submit" style={{ width: '100%', justifyContent: 'center' }}>
+                  <button className="btn btn-primary btn-full" type="submit">
                     Send Message <span className="arrow">→</span>
                   </button>
                 </div>

@@ -9,12 +9,12 @@ export default function CTABand() {
           <h2 className="display md light">
             Ready to move<br />your project <em>forward</em>?
           </h2>
-          <p className="lead light" style={{ marginTop: 18 }}>
+          <p className="lead light sec-lead">
             Contact our team today to scope your blasting, scaffolding, manpower, or HVAC
             requirement and receive a customised quote.
           </p>
         </div>
-        <div style={{ display: 'flex', gap: 12 }}>
+        <div className="cta-btn-group">
           <Link className="btn btn-accent" href="/contact">
             Get In Touch <span className="arrow">→</span>
           </Link>

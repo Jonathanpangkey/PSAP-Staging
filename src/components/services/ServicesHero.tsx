@@ -11,7 +11,7 @@ export default function ServicesHero() {
           </div>
           <div className="eyebrow">Our Services</div>
           <h1 className="display md">Our Services</h1>
-          <p className="lead" style={{ marginTop: 18 }}>
+          <p className="lead sec-lead">
             Five specialised disciplines to support your Marine Oil and Gas operations —
             under one accountable engineering team.
           </p>

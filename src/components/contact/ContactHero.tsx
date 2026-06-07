@@ -9,7 +9,7 @@ export default function ContactHero() {
           </div>
           <div className="eyebrow">Contact Us</div>
           <h1 className="display md">Contact Us</h1>
-          <p className="lead" style={{ marginTop: 18 }}>
+          <p className="lead sec-lead">
             Get in touch with our team for quotes, scope discussions, or project mobilisation
             requests.
           </p>

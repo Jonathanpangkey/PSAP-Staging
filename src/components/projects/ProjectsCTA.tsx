@@ -9,7 +9,7 @@ export default function ProjectsCTA() {
           <h2 className="display md light">
             Interested in <em>working</em><br />with us?
           </h2>
-          <p className="lead light" style={{ marginTop: 18 }}>
+          <p className="lead light sec-lead">
             Let's discuss how PSA can support your next Marine Oil and Gas project.
           </p>
         </div>

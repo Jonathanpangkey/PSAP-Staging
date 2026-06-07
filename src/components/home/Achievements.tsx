@@ -16,7 +16,7 @@ const stats = [
     },
   ]
   
-  export default function Achievements() {
+export default function Achievements() {
     return (
       <section className="sec ach">
         <div className="container">
@@ -24,7 +24,7 @@ const stats = [
           <h2 className="display md light">
             Proof points,<br />in plain numbers.
           </h2>
-          <div className="ach-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="ach-grid ach-grid--3">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div className="ach-num">

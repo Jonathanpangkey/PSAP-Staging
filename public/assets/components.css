@@ -880,3 +880,86 @@
     .svc { grid-template-columns: 1fr; border-right: 0; }
     .site-nav { display: none; }
   }
+
+  /* ============================================================
+     UTILITY & MODIFIER CLASSES
+     Replaces all inline style={} props across components.
+     ============================================================ */
+
+  /* Shared section spacing — lead paragraph top margin */
+  .sec-lead    { margin-top: 18px; }
+  .sec-lead--sm { margin-top: 14px; }
+
+  /* Section CTA wrapper — button below a heading/lead block */
+  .sec-cta { margin-top: 28px; }
+
+  /* "View more" button row — centred, with top margin */
+  .sec-view-more {
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  /* Hero — lead paragraph top spacing */
+  .hero-lead { margin-top: 24px; }
+
+  /* Hero — CTA button group (flex row, wrappable) */
+  .hero-cta-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  /* CTA band — dual-button row */
+  .cta-btn-group {
+    display: flex;
+    gap: 12px;
+  }
+
+  /* Achievements grid — 3-column override (home + about page) */
+  .ach-grid--3 { grid-template-columns: repeat(3, 1fr) !important; }
+
+  /* Achievements grid — tile variant (about page: no top border/padding) */
+  .ach-grid--tiles {
+    margin-top: 48px;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  /* Pillar card — body paragraph */
+  .pillar-desc {
+    font: 500 14px/1.55 var(--font-sans);
+    color: var(--color-fg-muted);
+    margin: 0;
+  }
+
+  /* Services page — section with no vertical padding (grid bleeds to edges) */
+  .svc-section { padding: 0; }
+
+  /* Custom-scope card — body paragraph */
+  .svc-custom-desc {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* Button — full-width, centred (contact form submit) */
+  .btn-full {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Contact page — heading margin */
+  .contact-heading { margin: 0 0 14px; }
+
+  /* Contact page — left column lead paragraph */
+  .contact-lead { margin-bottom: 32px; }
+
+  /* Contact page — form card lead paragraph */
+  .contact-form-lead { margin: 0 0 24px; }
+
+  /* Contact card — with bottom margin (between stacked cards) */
+  .contact-card--mb { margin-bottom: 18px; }
+
+  /* Photo placeholder — CMS empty slot (dimmed) */
+  .photo--placeholder-empty { opacity: 0.4; }

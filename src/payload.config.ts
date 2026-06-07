@@ -10,7 +10,7 @@ import { Media } from './collections/Media'
 import { Services } from './collections/Services'
 import { Projects } from './collections/Projects'
 import { Clients } from './collections/Clients'
-import { Certifications } from './collections/Certificationts'
+import { Certifications } from './collections/Certifications'
 import { Inquiries } from './collections/Inquiries'
 
 import { CompanyStats } from './globals/CompanyStats'

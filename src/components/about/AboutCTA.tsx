@@ -9,7 +9,7 @@ export default function AboutCTA() {
           <h2 className="display md light">
             Ready to discuss<br />your next <em>project</em>?
           </h2>
-          <p className="lead light" style={{ marginTop: 18 }}>
+          <p className="lead light sec-lead">
             Talk to our team about your next Marine Oil and Gas scope.
           </p>
         </div>

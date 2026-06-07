@@ -6,7 +6,7 @@ export default function Certifications() {
         <h2 className="display md">
           Certification <em>and Awards</em>
         </h2>
-        <p className="lead" style={{ marginTop: 18 }}>
+        <p className="lead sec-lead">
           Quality Management Systems and operational certifications supporting our marine
           engineering work.
         </p>
@@ -31,7 +31,7 @@ export default function Certifications() {
 
           {/* CMS empty slot */}
           <article className="cert-list-card">
-            <div className="photo" style={{ opacity: 0.4 }}>
+            <div className="photo photo--placeholder-empty">
               <span className="tag">Image · Add Certificate</span>
               <span className="arrowmark">+ add</span>
               <span className="note">CMS · Certifications &amp; Awards</span>

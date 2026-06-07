@@ -27,7 +27,7 @@ export default function WhyOperators() {
         <h2 className="display md">
           Why Operators<br />Choose Us
         </h2>
-        <p className="lead" style={{ marginTop: 18 }}>
+        <p className="lead sec-lead">
           Three pillars that define how we work with our partners.
         </p>
         <div className="pillars">
@@ -35,7 +35,7 @@ export default function WhyOperators() {
             <div className="pillar" key={pillar.kicker}>
               <div className="kicker">{pillar.kicker}</div>
               <h4>{pillar.title}</h4>
-              <p style={{ font: '500 14px/1.55 var(--font-sans)', color: 'var(--color-fg-muted)', margin: 0 }}>
+              <p className="pillar-desc">
                 {pillar.description}
               </p>
             </div>

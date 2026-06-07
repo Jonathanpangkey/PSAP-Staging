@@ -9,7 +9,7 @@ export default function ProjectsHero() {
           </div>
           <div className="eyebrow">Our Projects</div>
           <h1 className="display md">Our Projects</h1>
-          <p className="lead" style={{ marginTop: 18 }}>
+          <p className="lead sec-lead">
             Showcasing recent projects across the Asia-Pacific Marine Oil and Gas industry.
           </p>
         </div>

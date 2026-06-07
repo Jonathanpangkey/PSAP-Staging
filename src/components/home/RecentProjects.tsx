@@ -29,7 +29,7 @@ export default function RecentProjects() {
       <div className="container">
         <div className="eyebrow">Recent Projects</div>
         <h2 className="display md">Recent Projects</h2>
-        <p className="lead" style={{ marginTop: 18 }}>
+        <p className="lead sec-lead">
           A snapshot of recent work delivered across the Asia-Pacific Marine Oil and Gas industry.
         </p>
 
@@ -52,7 +52,7 @@ export default function RecentProjects() {
           ))}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: 32 }}>
+        <div className="sec-view-more">
           <Link className="btn btn-secondary" href="/projects">
             View More Projects <span className="arrow">→</span>
           </Link>

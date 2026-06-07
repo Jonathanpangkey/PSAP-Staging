@@ -45,7 +45,7 @@ const services = [
 
 export default function ServicesList() {
   return (
-    <section className="sec" style={{ padding: 0 }}>
+    <section className="sec svc-section">
       <div className="svc-grid">
         {services.map((svc) => (
           <div className="svc" key={svc.num}>
@@ -67,7 +67,7 @@ export default function ServicesList() {
           <div>
             <div className="eyebrow">Need Something Else?</div>
             <h3>Custom Marine Engineering Scopes</h3>
-            <p style={{ marginTop: 16, fontSize: 15, lineHeight: 1.55 }}>
+            <p className="svc-custom-desc">
               We routinely take on bespoke scopes outside this list — fabrication, retrofit
               programmes, and emergency dry-dock support.
             </p>

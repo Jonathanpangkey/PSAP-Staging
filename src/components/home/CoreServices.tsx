@@ -30,7 +30,7 @@ export default function CoreServices() {
       <div className="container">
         <div className="eyebrow">Our Core Services</div>
         <h2 className="display md">Our Core Services</h2>
-        <p className="lead" style={{ marginTop: 18 }}>
+        <p className="lead sec-lead">
           Five disciplines, one accountable engineering team — sized to scope, on the schedule your
           project needs.
         </p>
