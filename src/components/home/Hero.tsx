@@ -179,20 +179,6 @@ export default function Hero() {
         </div>
 
         <div className="hero-grid-lines" aria-hidden="true" />
-
-        <div className="hero-drag-hint" aria-hidden="true">
-          <svg width="28" height="14" viewBox="0 0 28 14" fill="none">
-            <path
-              d="M1 7h26M1 7l5-5M1 7l5 5M27 7l-5-5M27 7l-5 5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span>Drag or scroll to explore</span>
-        </div>
-
         <div className="hero-grid">
           <div>
             <div className="eyebrow">Marine Oil and Gas · Contractor</div>
@@ -225,7 +211,6 @@ export default function Hero() {
             <div className="hero-scroll-track">
               <div className="hero-scroll-bar" id="hero-scroll-bar" />
             </div>
-            <span>Scroll</span>
           </div>
         </div>
       </div>
