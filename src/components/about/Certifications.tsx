@@ -1,4 +1,11 @@
-export default function Certifications() {
+import { Certification } from '@/payload-types'
+import PayloadImage from '../ui/PayloadImage'
+
+interface CertificationsProps {
+  certifications: Certification[]
+}
+
+export default function Certifications({ certifications }: CertificationsProps) {
   return (
     <section className="sec why">
       <div className="container">
@@ -11,40 +18,47 @@ export default function Certifications() {
           engineering work.
         </p>
         <div className="cert-list">
-          {/* Seeded cert — ISO 9001:2015 */}
-          <article className="cert-list-card">
-            <div className="photo">
-              <span className="tag">Image · Certificate</span>
-              <span className="arrowmark">image →</span>
-              <span className="note">ISO 9001:2015 certificate scan</span>
-            </div>
-            <div className="body">
-              <div className="meta">Issued · TCCPL</div>
-              <h4>ISO 9001:2015 — Quality Management Systems</h4>
-              <p>
-                Manpower Supply for the Marine Oil and Gas industry, and provision of Steel
-                Construction; Structural, Piping, Blasting &amp; Painting; Electrical,
-                Mechanical, Scaffolding, and Cleaning works.
-              </p>
-            </div>
-          </article>
+          {certifications.map((cert) => (
+            <article className="cert-list-card" key={cert.id || cert.title}>
+              <div className="photo" style={{ position: 'relative' }}>
+                {cert.image && (
+                  <PayloadImage
+                    image={cert.image}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    alt={cert.title}
+                  />
+                )}
+                <span className="tag">Certificate</span>
+                {!cert.image && <span className="arrowmark">image →</span>}
+                <span className="note">{cert.title}</span>
+              </div>
+              <div className="body">
+                <div className="meta">Issued</div>
+                <h4>{cert.title}</h4>
+                <p>{cert.description}</p>
+              </div>
+            </article>
+          ))}
 
-          {/* CMS empty slot */}
-          <article className="cert-list-card">
-            <div className="photo photo--placeholder-empty">
-              <span className="tag">Image · Add Certificate</span>
-              <span className="arrowmark">+ add</span>
-              <span className="note">CMS · Certifications &amp; Awards</span>
-            </div>
-            <div className="body">
-              <div className="meta">CMS · Empty Slot</div>
-              <h4>Future Certificate or Award</h4>
-              <p>
-                Add new certifications or awards as a list of cards via the CMS — image, title,
-                and description per entry.
-              </p>
-            </div>
-          </article>
+          {/* CMS helper slot shown if there is only 1 certification */}
+          {certifications.length <= 1 && (
+            <article className="cert-list-card">
+              <div className="photo photo--placeholder-empty">
+                <span className="tag">Image · Add Certificate</span>
+                <span className="arrowmark">+ add</span>
+                <span className="note">CMS · Certifications &amp; Awards</span>
+              </div>
+              <div className="body">
+                <div className="meta">CMS · Empty Slot</div>
+                <h4>Future Certificate or Award</h4>
+                <p>
+                  Add new certifications or awards as a list of cards via the CMS — image, title,
+                  and description per entry.
+                </p>
+              </div>
+            </article>
+          )}
         </div>
       </div>
     </section>

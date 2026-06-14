@@ -1,22 +1,28 @@
-const stats = [
-  {
-    num: '20',
-    label: 'Years of Expertise',
-    sub: 'Established marine engineering posture',
-  },
-  {
-    num: '300',
-    label: 'Projects Completed',
-    sub: 'Across the Asia-Pacific region',
-  },
-  {
-    num: '1200',
-    label: 'Skilled Manpower',
-    sub: 'Marine engineering workforce',
-  },
-]
+import { CompanyStat } from '@/payload-types'
 
-export default function AboutAchievements() {
+interface AboutAchievementsProps {
+  stats: CompanyStat
+}
+
+export default function AboutAchievements({ stats }: AboutAchievementsProps) {
+  const items = [
+    {
+      num: String(stats.yearsOfExpertise),
+      label: 'Years of Expertise',
+      sub: 'Established marine engineering posture',
+    },
+    {
+      num: String(stats.projectsCompleted),
+      label: 'Projects Completed',
+      sub: 'Across the Asia-Pacific region',
+    },
+    {
+      num: String(stats.skilledManpower),
+      label: 'Skilled Manpower',
+      sub: 'Marine engineering workforce',
+    },
+  ]
+
   return (
     <section className="sec why">
       <div className="container">
@@ -26,7 +32,7 @@ export default function AboutAchievements() {
           Proof points, in plain numbers.
         </p>
         <div className="ach-grid ach-grid--3 ach-grid--tiles">
-          {stats.map((stat) => (
+          {items.map((stat) => (
             <div className="ach-tile" key={stat.label}>
               <div className="ach-tile-num">
                 {stat.num}<em>+</em>

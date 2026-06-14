@@ -1,29 +1,14 @@
 import Link from 'next/link'
+import { Project } from '@/payload-types'
+import PayloadImage from '../ui/PayloadImage'
 
-const projects = [
-  {
-    tag: 'Image · Project',
-    note: 'FPSO topsides coating',
-    title: 'Ceres FPSO — Topsides Coating',
-    description: 'Topsides surface preparation and protective coating for FPSO Ceres.',
-  },
-  {
-    tag: 'Image · Project',
-    note: 'Yard scaffolding mobilisation',
-    title: 'Karimun Yard — Scaffolding Frame',
-    description:
-      'Engineered scaffold frame for FSO conversion, sized and erected to project scope.',
-  },
-  {
-    tag: 'Image · Project',
-    note: 'HVAC retrofit, accommodation block',
-    title: 'Accommodation Block — HVAC Retrofit',
-    description:
-      'Mechanical-electrical retrofit of accommodation HVAC system, with commissioning to operator sign-off.',
-  },
-]
+interface RecentProjectsProps {
+  projects: Project[]
+}
 
-export default function RecentProjects() {
+export default function RecentProjects({ projects }: RecentProjectsProps) {
+  const displayProjects = projects.slice(0, 3)
+
   return (
     <section className="sec">
       <div className="container">
@@ -34,22 +19,34 @@ export default function RecentProjects() {
         </p>
 
         <div className="recent-grid">
-          {projects.map((project) => (
-            <article className="service-card" key={project.title}>
-              <div className="photo">
-                <span className="tag">{project.tag}</span>
-                <span className="arrowmark">image →</span>
-                <span className="note">{project.note}</span>
-              </div>
-              <div className="body">
-                <h4>{project.title}</h4>
-                <p>{project.description}</p>
-                <Link className="btn-link" href="/projects">
-                  Learn More
-                </Link>
-              </div>
-            </article>
-          ))}
+          {displayProjects.map((project) => {
+            const firstPhoto = project.photos?.[0]?.photo
+
+            return (
+              <article className="service-card" key={project.id || project.title}>
+                <div className="photo" style={{ position: 'relative' }}>
+                  {firstPhoto && (
+                    <PayloadImage
+                      image={firstPhoto}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      alt={project.title}
+                    />
+                  )}
+                  <span className="tag">Project</span>
+                  {!firstPhoto && <span className="arrowmark">image →</span>}
+                  <span className="note">{project.title}</span>
+                </div>
+                <div className="body">
+                  <h4>{project.title}</h4>
+                  <p>{project.description}</p>
+                  <Link className="btn-link" href="/projects">
+                    Learn More
+                  </Link>
+                </div>
+              </article>
+            )
+          })}
         </div>
 
         <div className="sec-view-more">
@@ -61,3 +58,4 @@ export default function RecentProjects() {
     </section>
   )
 }
+

@@ -1,6 +1,11 @@
-const clients = ['PERTAMINA', 'McDermott', 'Saipem', 'PaxOcean', 'Sembcorp']
+import { Client } from '@/payload-types'
+import PayloadImage from '../ui/PayloadImage'
 
-export default function Clients() {
+interface ClientsProps {
+  clients: Client[]
+}
+
+export default function Clients({ clients }: ClientsProps) {
   return (
     <section className="sec">
       <div className="container">
@@ -11,8 +16,19 @@ export default function Clients() {
         </p>
         <div className="clients-row">
           {clients.map((client) => (
-            <div className="client-cell" key={client}>
-              {client}
+            <div className="client-cell" key={client.id || client.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100px' }}>
+              {client.logo ? (
+                <div style={{ position: 'relative', width: '120px', height: '40px' }}>
+                  <PayloadImage
+                    image={client.logo}
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    alt={client.name}
+                  />
+                </div>
+              ) : (
+                <span>{client.name}</span>
+              )}
             </div>
           ))}
         </div>

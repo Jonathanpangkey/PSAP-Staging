@@ -1,42 +1,48 @@
-const stats = [
+import { CompanyStat } from '@/payload-types'
+
+interface AchievementsProps {
+  stats: CompanyStat
+}
+
+export default function Achievements({ stats }: AchievementsProps) {
+  const items = [
     {
-      number: '20',
+      number: String(stats.yearsOfExpertise),
       label: 'Years of Expertise',
       sub: 'Established marine engineering posture',
     },
     {
-      number: '300',
+      number: String(stats.projectsCompleted),
       label: 'Projects Completed',
       sub: 'Across the Asia-Pacific region',
     },
     {
-      number: '1200',
+      number: String(stats.skilledManpower),
       label: 'Skilled Manpower',
       sub: 'Marine engineering workforce',
     },
   ]
-  
-export default function Achievements() {
-    return (
-      <section className="sec ach">
-        <div className="container">
-          <div className="eyebrow dark">Our Achievements</div>
-          <h2 className="display md light">
-            Proof points,<br />in plain numbers.
-          </h2>
-          <div className="ach-grid ach-grid--3">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="ach-num">
-                  {stat.number}<em>+</em>
-                </div>
-                <div className="ach-rule" />
-                <div className="ach-lab">{stat.label}</div>
-                <div className="ach-sub">{stat.sub}</div>
+
+  return (
+    <section className="sec ach">
+      <div className="container">
+        <div className="eyebrow dark">Our Achievements</div>
+        <h2 className="display md light">
+          Proof points,<br />in plain numbers.
+        </h2>
+        <div className="ach-grid ach-grid--3">
+          {items.map((stat) => (
+            <div key={stat.label}>
+              <div className="ach-num">
+                {stat.number}<em>+</em>
               </div>
-            ))}
-          </div>
+              <div className="ach-rule" />
+              <div className="ach-lab">{stat.label}</div>
+              <div className="ach-sub">{stat.sub}</div>
+            </div>
+          ))}
         </div>
-      </section>
-    )
-  }
+      </div>
+    </section>
+  )
+}

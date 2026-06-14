@@ -1,66 +1,42 @@
 import Link from 'next/link'
+import { Service } from '@/payload-types'
+import PayloadImage from '../ui/PayloadImage'
 
-const services = [
-  {
-    num: '01',
-    title: 'Blasting & Painting',
-    description:
-      'Surface preparation and protective coating for marine assets, with documented inspection at each stage.',
-    tag: 'Image · Service 01',
-    note: 'Hull blasting, FPSO topsides',
-  },
-  {
-    num: '02',
-    title: 'Manpower Supply',
-    description:
-      'Skilled marine manpower across welding, fitting, rigging, painting, and scaffolding — mobilised from our Batam pool.',
-    tag: 'Image · Service 02',
-    note: 'Crew shift change, platform',
-  },
-  {
-    num: '03',
-    title: 'Scaffolding',
-    description:
-      'Scaffolding design, erection, and dismantling for marine engineering work — sized to project scope and access conditions.',
-    tag: 'Image · Service 03',
-    note: 'Scaffold erection, deck-leg interface',
-  },
-  {
-    num: '04',
-    title: 'Equipment Supply',
-    description:
-      'A well-maintained equipment fleet supporting project execution across our service disciplines.',
-    tag: 'Image · Service 04',
-    note: 'Compressor & blast-pot fleet, yard floor',
-  },
-  {
-    num: '05',
-    title: 'HVAC / Mechanical-Electrical',
-    description:
-      'HVAC retrofit, mechanical-electrical install, and commissioning for accommodation blocks, control rooms, and electrical houses — from drawings through to commissioning.',
-    tag: 'Image · Service 05',
-    note: 'HVAC ductwork, accommodation block',
-  },
-]
+interface ServicesListProps {
+  services: Service[]
+}
 
-export default function ServicesList() {
+export default function ServicesList({ services }: ServicesListProps) {
   return (
     <section className="sec svc-section">
       <div className="svc-grid">
-        {services.map((svc) => (
-          <div className="svc" key={svc.num}>
-            <div>
-              <div className="svc-num">{svc.num}</div>
-              <h3>{svc.title}</h3>
-              <p>{svc.description}</p>
+        {services.map((svc, index) => {
+          const firstPhoto = svc.photos?.[0]?.photo
+          const numStr = String(index + 1).padStart(2, '0')
+
+          return (
+            <div className="svc" key={svc.id || svc.title}>
+              <div>
+                <div className="svc-num">{numStr}</div>
+                <h3>{svc.title}</h3>
+                <p>{svc.description}</p>
+              </div>
+              <div className="photo" style={{ position: 'relative' }}>
+                {firstPhoto && (
+                  <PayloadImage
+                    image={firstPhoto}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    alt={svc.title}
+                  />
+                )}
+                <span className="tag">Service · {numStr}</span>
+                {!firstPhoto && <span className="arrowmark">image →</span>}
+                <span className="note">{svc.title}</span>
+              </div>
             </div>
-            <div className="photo">
-              <span className="tag">{svc.tag}</span>
-              <span className="arrowmark">image →</span>
-              <span className="note">{svc.note}</span>
-            </div>
-          </div>
-        ))}
+          )
+        })}
 
         {/* Custom scope card */}
         <div className="svc-custom">

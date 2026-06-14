@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
 import ProjectsHero from '@/components/projects/ProjectsHero'
 import ProjectsList from '@/components/projects/ProjectsList'
 import ProjectsCTA from '@/components/projects/ProjectsCTA'
+
+import { fetchProjects } from '@/lib/queries/projects'
+
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: 'Our Projects | PT Perintis Sarana Astra',
@@ -11,16 +13,14 @@ export const metadata: Metadata = {
     'A portfolio of marine engineering projects delivered across the Asia-Pacific — FPSO coatings, scaffold frames, HVAC retrofits, and manpower mobilisations.',
 }
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await fetchProjects()
+
   return (
-    <div className="site">
-      <Header />
-      <main>
-        <ProjectsHero />
-        <ProjectsList />
-        <ProjectsCTA />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <ProjectsHero />
+      <ProjectsList projects={projects} />
+      <ProjectsCTA />
+    </main>
   )
 }

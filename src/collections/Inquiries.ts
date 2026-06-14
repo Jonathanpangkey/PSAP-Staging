@@ -45,6 +45,7 @@ export const Inquiries: CollectionConfig = {
         { label: 'Scaffolding', value: 'scaffolding' },
         { label: 'Equipment Supply', value: 'equipment-supply' },
         { label: 'HVAC / Mechanical-Electrical', value: 'hvac-mechanical-electrical' },
+        { label: 'Custom Scope / Other', value: 'custom-scope' },
       ],
     },
     {

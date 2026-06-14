@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
 import ServicesHero from '@/components/services/ServicesHero'
 import ServicesList from '@/components/services/ServicesList'
 import WhyServicesMatter from '@/components/services/WhyServicesMatter'
 import ServicesCTA from '@/components/services/ServicesCTA'
+
+import { fetchServices } from '@/lib/queries/services'
+
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: 'Our Services | PT Perintis Sarana Astra',
@@ -12,17 +14,15 @@ export const metadata: Metadata = {
     'Five marine engineering disciplines — blasting & painting, manpower supply, scaffolding, equipment supply, and HVAC / mechanical-electrical — under one accountable team.',
 }
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const services = await fetchServices()
+
   return (
-    <div className="site">
-      <Header />
-      <main>
-        <ServicesHero />
-        <ServicesList />
-        <WhyServicesMatter />
-        <ServicesCTA />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <ServicesHero />
+      <ServicesList services={services} />
+      <WhyServicesMatter />
+      <ServicesCTA />
+    </main>
   )
 }

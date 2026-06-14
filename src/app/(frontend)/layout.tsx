@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 import './styles.css'
 
 export const metadata: Metadata = {
@@ -17,7 +19,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="site">
+          <Header />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }

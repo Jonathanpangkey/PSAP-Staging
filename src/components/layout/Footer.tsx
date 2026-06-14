@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { fetchContactInfo } from '@/lib/queries/contact-info'
 
-export default function Footer() {
+export default async function Footer() {
+  const contactInfo = await fetchContactInfo()
+
   return (
     <footer className="site-footer">
       <div className="site-footer-grid">
@@ -36,8 +39,8 @@ export default function Footer() {
         <div>
           <h5>Contact</h5>
           <ul>
-            <li>+62 811-2111-1681</li>
-            <li>info@perintissaranaastra.com</li>
+            <li>{contactInfo.whatsapp}</li>
+            <li>{contactInfo.emailInfo}</li>
             <li>Batam, Indonesia</li>
           </ul>
         </div>
@@ -49,3 +52,4 @@ export default function Footer() {
     </footer>
   )
 }
+

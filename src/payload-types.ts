@@ -251,7 +251,8 @@ export interface Inquiry {
     | 'manpower-supply'
     | 'scaffolding'
     | 'equipment-supply'
-    | 'hvac-mechanical-electrical';
+    | 'hvac-mechanical-electrical'
+    | 'custom-scope';
   message: string;
   updatedAt: string;
   createdAt: string;

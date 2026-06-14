@@ -2,8 +2,13 @@
 
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
+import { CompanyStat } from '@/payload-types'
 
-export default function Hero() {
+interface HeroProps {
+  stats: CompanyStat
+}
+
+export default function Hero({ stats }: HeroProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
   const stickyRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -201,9 +206,9 @@ export default function Hero() {
               </Link>
             </div>
             <div className="hero-trust">
-              <span>300+ Projects Completed</span>
+              <span>{stats.projectsCompleted}+ Projects Completed</span>
               <span>Batam, Indonesia</span>
-              <span>20+ Years of Expertise</span>
+              <span>{stats.yearsOfExpertise}+ Years of Expertise</span>
             </div>
           </div>
 
