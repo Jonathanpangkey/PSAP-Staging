@@ -1,5 +1,6 @@
 import { fetchContactInfo } from '@/lib/queries/contact-info'
 import ContactForm from './ContactForm'
+import { getWhatsAppLink } from '@/lib/utils'
 
 export default async function ContactContent() {
   const contactInfo = await fetchContactInfo()
@@ -44,7 +45,15 @@ export default async function ContactContent() {
               <div className="row">
                 <div className="ico">☎</div>
                 <div>
-                  <div className="label">{contactInfo.whatsapp}</div>
+                  <div className="label">
+                    <a
+                      href={getWhatsAppLink(contactInfo.whatsapp)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {contactInfo.whatsapp}
+                    </a>
+                  </div>
                   <div className="sub">{contactInfo.whatsappSubdesc}</div>
                 </div>
               </div>

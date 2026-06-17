@@ -1,6 +1,10 @@
-import Link from 'next/link'
+import { fetchContactInfo } from '@/lib/queries/contact-info'
+import { getWhatsAppLink } from '@/lib/utils'
 
-export default function ProjectsCTA() {
+export default async function ProjectsCTA() {
+  const contactInfo = await fetchContactInfo()
+  const waUrl = getWhatsAppLink(contactInfo.whatsapp)
+
   return (
     <section className="cta-band">
       <div className="cta-band-inner">
@@ -13,9 +17,14 @@ export default function ProjectsCTA() {
             Let's discuss how PSA can support your next Marine Oil and Gas project.
           </p>
         </div>
-        <Link className="btn btn-accent" href="/contact">
+        <a
+          className="btn btn-accent"
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Get In Touch <span className="arrow">→</span>
-        </Link>
+        </a>
       </div>
     </section>
   )

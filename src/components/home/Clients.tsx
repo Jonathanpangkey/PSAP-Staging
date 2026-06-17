@@ -16,8 +16,19 @@ export default function Clients({ clients }: ClientsProps) {
         </p>
         <div className="clients-row">
           {clients.map((client) => (
-            <div className="client-cell" key={client.id || client.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100px' }}>
-              {client.logo ? (
+            <div
+              className="client-cell"
+              key={client.id || client.name}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '12px',
+                minHeight: '120px',
+              }}
+            >
+              {client.logo && (
                 <div style={{ position: 'relative', width: '120px', height: '40px' }}>
                   <PayloadImage
                     image={client.logo}
@@ -26,9 +37,10 @@ export default function Clients({ clients }: ClientsProps) {
                     alt={client.name}
                   />
                 </div>
-              ) : (
-                <span>{client.name}</span>
               )}
+              <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-fg-muted)' }}>
+                {client.name}
+              </span>
             </div>
           ))}
         </div>

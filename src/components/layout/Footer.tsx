@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { fetchContactInfo } from '@/lib/queries/contact-info'
+import { getWhatsAppLink } from '@/lib/utils'
 
 export default async function Footer() {
   const contactInfo = await fetchContactInfo()
@@ -39,8 +40,18 @@ export default async function Footer() {
         <div>
           <h5>Contact</h5>
           <ul>
-            <li>{contactInfo.whatsapp}</li>
-            <li>{contactInfo.emailInfo}</li>
+            <li>
+              <a
+                href={getWhatsAppLink(contactInfo.whatsapp)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {contactInfo.whatsapp}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${contactInfo.emailInfo}`}>{contactInfo.emailInfo}</a>
+            </li>
             <li>Batam, Indonesia</li>
           </ul>
         </div>

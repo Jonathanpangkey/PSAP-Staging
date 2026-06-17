@@ -10,20 +10,22 @@ import { fetchCompanyStats } from '@/lib/queries/company-stats'
 import { fetchServices } from '@/lib/queries/services'
 import { fetchProjects } from '@/lib/queries/projects'
 import { fetchClients } from '@/lib/queries/clients'
+import { fetchHomeAssets } from '@/lib/queries/home-assets'
 
 export const revalidate = 60
 
 export default async function HomePage() {
-  const [stats, services, projects, clients] = await Promise.all([
+  const [stats, services, projects, clients, homeAssets] = await Promise.all([
     fetchCompanyStats(),
     fetchServices(),
     fetchProjects(),
     fetchClients(),
+    fetchHomeAssets(),
   ])
 
   return (
     <main>
-      <Hero stats={stats} />
+      <Hero stats={stats} homeAsset={homeAssets} />
       <CoreServices services={services} />
       <WhyPSA />
       <Achievements stats={stats} />

@@ -59,6 +59,7 @@ export async function fetchProjects(): Promise<Project[]> {
       collection: 'projects',
       depth: 1,
       limit: 100,
+      sort: '-createdAt',
     })
 
     if (result.docs && result.docs.length > 0) {

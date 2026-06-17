@@ -1,6 +1,11 @@
 import Link from 'next/link'
+import { fetchContactInfo } from '@/lib/queries/contact-info'
+import { getWhatsAppLink } from '@/lib/utils'
 
-export default function CTABand() {
+export default async function CTABand() {
+  const contactInfo = await fetchContactInfo()
+  const waUrl = getWhatsAppLink(contactInfo.whatsapp)
+
   return (
     <section className="cta-band">
       <div className="cta-band-inner">
@@ -15,9 +20,14 @@ export default function CTABand() {
           </p>
         </div>
         <div className="cta-btn-group">
-          <Link className="btn btn-accent" href="/contact">
+          <a
+            className="btn btn-accent"
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Get In Touch <span className="arrow">→</span>
-          </Link>
+          </a>
           <Link className="btn btn-ghost-light" href="#">
             Download Profile
           </Link>

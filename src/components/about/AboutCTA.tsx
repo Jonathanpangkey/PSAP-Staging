@@ -1,6 +1,10 @@
-import Link from 'next/link'
+import { fetchContactInfo } from '@/lib/queries/contact-info'
+import { getWhatsAppLink } from '@/lib/utils'
 
-export default function AboutCTA() {
+export default async function AboutCTA() {
+  const contactInfo = await fetchContactInfo()
+  const waUrl = getWhatsAppLink(contactInfo.whatsapp)
+
   return (
     <section className="cta-band">
       <div className="cta-band-inner">
@@ -13,9 +17,14 @@ export default function AboutCTA() {
             Talk to our team about your next Marine Oil and Gas scope.
           </p>
         </div>
-        <Link className="btn btn-accent" href="/contact">
+        <a
+          className="btn btn-accent"
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Contact Our Team <span className="arrow">→</span>
-        </Link>
+        </a>
       </div>
     </section>
   )
