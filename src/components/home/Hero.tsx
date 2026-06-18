@@ -6,20 +6,22 @@ import PayloadImage from '../ui/PayloadImage'
 
 interface HeroProps {
   stats: CompanyStat
-  homeAsset: HomeAsset | null
+  homeAsset?: HomeAsset | null
 }
 
 export default function Hero({ stats, homeAsset }: HeroProps) {
+  const hasHeroImage = !!homeAsset?.heroImage
+
   return (
     <div className="hero">
       <div className="hero-bg" aria-hidden="true">
-        {homeAsset?.heroImage ? (
+        {hasHeroImage ? (
           <PayloadImage
             image={homeAsset.heroImage}
             fill
             className="hero-bg-img"
-            alt="Hero Background"
             style={{ objectFit: 'cover' }}
+            alt="Hero Background"
           />
         ) : (
           <video

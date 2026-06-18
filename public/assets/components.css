@@ -963,3 +963,28 @@
 
   /* Photo placeholder — CMS empty slot (dimmed) */
   .photo--placeholder-empty { opacity: 0.4; }
+
+  /* Floating WhatsApp button */
+  .floating-wa {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    background-color: #25d366;
+    color: #fff;
+    width: 50px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  .floating-wa:hover {
+    transform: scale(1.08);
+    background-color: #20ba5a;
+    color: #fff;
+  }
+
+
