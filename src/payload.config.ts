@@ -46,7 +46,10 @@ export default buildConfig({
       ? [
           s3Storage({
             collections: {
-              media: true,
+              media: {
+                disableLocalStorage: true,
+                disablePayloadAccessControl: true,
+              },
             },
             bucket: process.env.S3_BUCKET,
             config: {
