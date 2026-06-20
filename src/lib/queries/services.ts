@@ -8,7 +8,7 @@ export const FALLBACK_SERVICES: Service[] = [
     description: 'Surface preparation and protective coating for marine assets, with documented inspection at each stage.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ export const FALLBACK_SERVICES: Service[] = [
     description: 'Skilled marine manpower across welding, fitting, rigging, painting, and scaffolding — mobilised from our Batam pool.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const FALLBACK_SERVICES: Service[] = [
     description: 'Scaffolding design, erection, and dismantling for marine engineering work — sized to project scope and access conditions.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ export const FALLBACK_SERVICES: Service[] = [
     description: 'A well-maintained equipment fleet supporting project execution across our service disciplines.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ export const FALLBACK_SERVICES: Service[] = [
     description: 'HVAC retrofit, mechanical-electrical install, and commissioning for accommodation blocks, control rooms, and electrical houses — from drawings through to commissioning.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
 ]
 

@@ -26,6 +26,8 @@ export const Projects: CollectionConfig = {
       name: 'photos',
       type: 'array',
       label: 'Photos (Carousel)',
+      required: true,
+      minRows: 1,
       fields: [
         {
           name: 'photo',

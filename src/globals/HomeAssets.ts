@@ -8,7 +8,7 @@ export const HomeAssets: GlobalConfig = {
       name: 'heroImage',
       type: 'upload',
       relationTo: 'media',
-      required: true,
+      required: false,
       label: 'Hero Image',
     },
   ],

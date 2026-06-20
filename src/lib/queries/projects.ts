@@ -8,7 +8,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     description: 'Topsides surface preparation and protective coating for FPSO Ceres, executed under a documented quality plan.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     description: 'Engineered scaffold frame for FSO conversion, sized and erected to project scope.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     description: 'Mechanical-electrical retrofit of accommodation HVAC system, with commissioning to operator sign-off.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     description: 'Mobilisation of skilled marine manpower across welding, painting, scaffolding, and rigging disciplines.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     description: 'Compressor module refit, with full surface preparation and protective coating.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
   {
     id: 6,
@@ -48,7 +48,7 @@ export const FALLBACK_PROJECTS: Project[] = [
     description: 'Electrical house installation, termination, and commissioning to operator sign-off.',
     updatedAt: '',
     createdAt: '',
-    photos: null,
+    photos: [],
   },
 ]
 

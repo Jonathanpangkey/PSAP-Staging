@@ -187,12 +187,10 @@ export interface Service {
   id: number;
   title: string;
   description: string;
-  photos?:
-    | {
-        photo: number | Media;
-        id?: string | null;
-      }[]
-    | null;
+  photos: {
+    photo: number | Media;
+    id?: string | null;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
@@ -204,12 +202,10 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  photos?:
-    | {
-        photo: number | Media;
-        id?: string | null;
-      }[]
-    | null;
+  photos: {
+    photo: number | Media;
+    id?: string | null;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
@@ -516,7 +512,7 @@ export interface CompanyStat {
  */
 export interface HomeAsset {
   id: number;
-  heroImage: number | Media;
+  heroImage?: (number | null) | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
