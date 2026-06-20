@@ -49,6 +49,12 @@ export default buildConfig({
               media: {
                 disableLocalStorage: true,
                 disablePayloadAccessControl: true,
+                generateFileURL: ({ filename, prefix }) => {
+                  const s3Endpoint = process.env.S3_ENDPOINT || ''
+                  const bucket = process.env.S3_BUCKET || ''
+                  const baseUrl = s3Endpoint.replace('/storage/v1/s3', '/storage/v1/object/public')
+                  return `${baseUrl}/${bucket}/${prefix ? `${prefix}/` : ''}${filename}`
+                },
               },
             },
             bucket: process.env.S3_BUCKET,
