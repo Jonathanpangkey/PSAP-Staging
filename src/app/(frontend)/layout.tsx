@@ -3,6 +3,8 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import './styles.css'
 
+export const dynamic = 'force-dynamic'
+
 import { fetchContactInfo } from '@/lib/queries/contact-info'
 import { getWhatsAppLink } from '@/lib/utils'
 
