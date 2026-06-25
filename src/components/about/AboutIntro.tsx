@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function AboutIntro() {
   return (
@@ -29,9 +30,15 @@ export default function AboutIntro() {
               </Link>
             </div>
           </div>
-          <div className="photo">
-            <span className="tag">Image · About</span>
-            <span className="arrowmark">image →</span>
+          <div className="photo" style={{ position: 'relative', overflow: 'hidden' }}>
+            <Image
+              src="/assets/about/about.webp"
+              fill
+              style={{ objectFit: 'cover' }}
+              alt="Yard floor, Batam HQ"
+              sizes="(max-width: 980px) 100vw, 50vw"
+            />
+            <span className="tag">About Us</span>
             <span className="note">Yard floor, Batam HQ</span>
           </div>
         </div>
