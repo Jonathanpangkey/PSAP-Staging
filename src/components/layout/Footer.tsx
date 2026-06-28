@@ -11,7 +11,7 @@ export default async function Footer() {
       <div className="site-footer-grid">
         <div>
           <div className="site-footer-plate">
-            <Image src="/assets/psa-logo.png" alt="PSA" width={48} height={48} />
+            <Image src="/assets/psa-logo.png" alt="PSA" width={57} height={40} />
           </div>
           <div className="tag">
             PT Perintis Sarana Astra — Marine Oil and Gas contractor, based in Batam, Indonesia.

@@ -33,9 +33,7 @@ export default function RecentProjects({ projects }: RecentProjectsProps) {
                       alt={project.title}
                     />
                   )}
-                  <span className="tag">Project</span>
                   {!firstPhoto && <span className="arrowmark">image →</span>}
-                  <span className="note">{project.title}</span>
                 </div>
                 <div className="body">
                   <h4>{project.title}</h4>
