@@ -11,6 +11,9 @@ import { getWhatsAppLink } from '@/lib/utils'
 export const metadata: Metadata = {
   title: 'PT Perintis Sarana Astra',
   description: 'Marine Oil and Gas contractor, based in Batam, Indonesia.',
+  icons: {
+    icon: '/assets/favicon-square-white.png',
+  },
 }
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
