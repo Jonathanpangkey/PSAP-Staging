@@ -24,6 +24,8 @@ export default function RecentProjects({ projects }: RecentProjectsProps) {
               <article className="service-card" key={project.id || project.title}>
                 <div className="photo" style={{ position: 'relative' }}>
                   <ServiceCarousel photos={project.photos} alt={project.title} />
+                  <span className="tag">Project</span>
+                  <span className="note">{project.title}</span>
                 </div>
                 <div className="body">
                   <h4>{project.title}</h4>

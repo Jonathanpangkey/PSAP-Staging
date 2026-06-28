@@ -48,6 +48,8 @@ export default function ServicesList({ services }: ServicesListProps) {
               </div>
               <div className="photo" style={{ position: 'relative' }}>
                 <ServiceCarousel photos={svc.photos} alt={svc.title} />
+                <span className="tag">Service · {numStr}</span>
+                <span className="note">{svc.title}</span>
               </div>
             </div>
           )

@@ -58,7 +58,6 @@ export default async function Footer() {
       </div>
       <div className="site-footer-bottom">
         <span>© 2026 PT Perintis Sarana Astra. All rights reserved.</span>
-        <span>Designed by Bluebridge</span>
       </div>
     </footer>
   )

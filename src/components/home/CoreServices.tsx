@@ -47,6 +47,8 @@ export default function CoreServices({ services }: CoreServicesProps) {
               <article className="service-card" key={service.id || service.title}>
                 <div className="photo" style={{ position: 'relative' }}>
                   <ServiceCarousel photos={service.photos} alt={service.title} />
+                  <span className="tag">Service · 0{(currentPage - 1) * itemsPerPage + index + 1}</span>
+                  <span className="note">{service.title}</span>
                 </div>
                 <div className="body">
                   <h4>{service.title}</h4>
