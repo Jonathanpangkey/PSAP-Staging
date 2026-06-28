@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Project } from '@/payload-types'
-import PayloadImage from '../ui/PayloadImage'
+import ServiceCarousel from '../ui/ServiceCarousel'
 
 interface ProjectsListProps {
   projects: Project[]
@@ -16,22 +16,13 @@ export default function ProjectsList({ projects }: ProjectsListProps) {
       <div className="container">
         <div className="proj-grid">
           {projects.map((project) => {
-            const firstPhoto = project.photos?.[0]?.photo
             const isExpanded = !!expandedIds[project.id]
             const showToggle = project.description && project.description.length > 180
 
             return (
               <article className="proj-card" key={project.id || project.title}>
                 <div className="photo" style={{ position: 'relative' }}>
-                  {firstPhoto && (
-                    <PayloadImage
-                      image={firstPhoto}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      alt={project.title}
-                    />
-                  )}
-                  {!firstPhoto && <span className="arrowmark">image →</span>}
+                  <ServiceCarousel photos={project.photos} alt={project.title} />
                 </div>
                 <div className="body">
                   <h4>{project.title}</h4>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Project } from '@/payload-types'
-import PayloadImage from '../ui/PayloadImage'
+import ServiceCarousel from '../ui/ServiceCarousel'
 
 interface RecentProjectsProps {
   projects: Project[]
@@ -20,20 +20,10 @@ export default function RecentProjects({ projects }: RecentProjectsProps) {
 
         <div className="recent-grid">
           {displayProjects.map((project) => {
-            const firstPhoto = project.photos?.[0]?.photo
-
             return (
               <article className="service-card" key={project.id || project.title}>
                 <div className="photo" style={{ position: 'relative' }}>
-                  {firstPhoto && (
-                    <PayloadImage
-                      image={firstPhoto}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      alt={project.title}
-                    />
-                  )}
-                  {!firstPhoto && <span className="arrowmark">image →</span>}
+                  <ServiceCarousel photos={project.photos} alt={project.title} />
                 </div>
                 <div className="body">
                   <h4>{project.title}</h4>
