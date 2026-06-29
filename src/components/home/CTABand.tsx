@@ -1,10 +1,13 @@
-import Link from 'next/link'
 import { fetchContactInfo } from '@/lib/queries/contact-info'
 import { getWhatsAppLink } from '@/lib/utils'
 
 export default async function CTABand() {
   const contactInfo = await fetchContactInfo()
   const waUrl = getWhatsAppLink(contactInfo.whatsapp)
+  const pdfUrl =
+    contactInfo.companyProfilePdf && typeof contactInfo.companyProfilePdf === 'object'
+      ? contactInfo.companyProfilePdf.url
+      : null
 
   return (
     <section className="cta-band">
@@ -28,9 +31,26 @@ export default async function CTABand() {
           >
             Get In Touch <span className="arrow">→</span>
           </a>
-          <Link className="btn btn-ghost-light" href="#">
-            Download Profile
-          </Link>
+          {pdfUrl ? (
+            <a
+              className="btn btn-ghost-light"
+              href={pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              Download Profile
+            </a>
+          ) : (
+            <a
+              className="btn btn-ghost-light"
+              href="#"
+              style={{ opacity: 0.5, cursor: 'not-allowed' }}
+              title="Company Profile is not available yet"
+            >
+              Download Profile
+            </a>
+          )}
         </div>
       </div>
     </section>

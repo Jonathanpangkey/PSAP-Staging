@@ -14,6 +14,7 @@ export const DEFAULT_CONTACT_INFO: ContactInfo = {
   address: 'Bintang Industrial Park II D10/3AB\nBatam, Indonesia\n1.0902° N · 103.9532° E',
   addressSubdesc: 'Field-service teams dispatch from Batam HQ across the Asia-Pacific region.',
   googleMapsUrl: 'https://maps.google.com/?q=1.0902,103.9532',
+  companyProfilePdf: null,
 }
 
 export async function fetchContactInfo(): Promise<ContactInfo> {
@@ -36,6 +37,7 @@ export async function fetchContactInfo(): Promise<ContactInfo> {
       address: info.address ?? DEFAULT_CONTACT_INFO.address,
       addressSubdesc: info.addressSubdesc ?? DEFAULT_CONTACT_INFO.addressSubdesc,
       googleMapsUrl: info.googleMapsUrl ?? DEFAULT_CONTACT_INFO.googleMapsUrl,
+      companyProfilePdf: info.companyProfilePdf ?? null,
     }
   } catch (error) {
     console.error('Error fetching contact info global from Payload:', error)

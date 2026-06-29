@@ -29,7 +29,11 @@ export default function RecentProjects({ projects }: RecentProjectsProps) {
                 </div>
                 <div className="body">
                   <h4>{project.title}</h4>
-                  <p>{project.description}</p>
+                  <p>
+                    {project.description && project.description.length > 140
+                      ? project.description.slice(0, 140).trim() + '...'
+                      : project.description}
+                  </p>
                   <Link className="btn-link" href="/projects">
                     Learn More
                   </Link>

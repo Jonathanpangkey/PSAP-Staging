@@ -1198,8 +1198,8 @@
      ============================================================ */
 
   /* Shared section spacing — lead paragraph top margin */
-  .sec-lead    { margin-top: 18px !important; }
-  .sec-lead--sm { margin-top: 14px !important; }
+  .sec-lead    { margin-top: 28px !important; }
+  .sec-lead--sm { margin-top: 20px !important; }
 
   /* Section CTA wrapper — button below a heading/lead block */
   .sec-cta { margin-top: 28px; }

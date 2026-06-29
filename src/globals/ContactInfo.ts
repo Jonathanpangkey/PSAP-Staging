@@ -70,5 +70,12 @@ export const ContactInfo: GlobalConfig = {
       required: true,
       label: 'Google Maps URL',
     },
+    {
+      name: 'companyProfilePdf',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+      label: 'Company Profile PDF',
+    },
   ],
 }

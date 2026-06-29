@@ -52,7 +52,11 @@ export default function CoreServices({ services }: CoreServicesProps) {
                 </div>
                 <div className="body">
                   <h4>{service.title}</h4>
-                  <p>{service.description}</p>
+                  <p>
+                    {service.description && service.description.length > 140
+                      ? service.description.slice(0, 140).trim() + '...'
+                      : service.description}
+                  </p>
                   <Link className="btn-link" href="/services">
                     Learn More
                   </Link>

@@ -533,6 +533,7 @@ export interface ContactInfo {
   address: string;
   addressSubdesc: string;
   googleMapsUrl: string;
+  companyProfilePdf?: (number | null) | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -574,6 +575,7 @@ export interface ContactInfoSelect<T extends boolean = true> {
   address?: T;
   addressSubdesc?: T;
   googleMapsUrl?: T;
+  companyProfilePdf?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
