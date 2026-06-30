@@ -25,7 +25,7 @@ export default function Hero({ stats, homeAsset }: HeroProps) {
           />
         ) : (
           <video
-            src="/assets/home/[PSAP2] Hero Landing Page.mp4"
+            src="/assets/media/home/[PSAP2] Hero Landing Page.mp4"
             autoPlay
             muted
             playsInline

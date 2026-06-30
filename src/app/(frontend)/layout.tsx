@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import NavigationProgressBar from '@/components/ui/NavigationProgressBar'
 import './styles.css'
 
 export const dynamic = 'force-dynamic'
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   title: 'PT Perintis Sarana Astra',
   description: 'Marine Oil and Gas contractor, based in Batam, Indonesia.',
   icons: {
-    icon: '/assets/favicon-square-white.png',
+    icon: '/assets/logos/favicon-square-white.png',
   },
 }
 
@@ -32,6 +33,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
       </head>
       <body>
         <div className="site">
+          <NavigationProgressBar />
           <Header />
           {children}
           <Footer />

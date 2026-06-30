@@ -32,7 +32,7 @@ export default function AboutIntro() {
           </div>
           <div className="photo" style={{ position: 'relative', overflow: 'hidden' }}>
             <Image
-              src="/assets/about/about.webp"
+              src="/assets/media/about/about.webp"
               fill
               style={{ objectFit: 'cover' }}
               alt="Yard floor, Batam HQ"

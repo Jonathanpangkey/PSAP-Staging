@@ -11,7 +11,7 @@ interface PayloadImageProps extends Omit<Partial<ImageProps>, 'src' | 'alt'> {
 export default function PayloadImage({
   image,
   alt = '',
-  fallbackSrc = '/assets/bluebridge.png',
+  fallbackSrc = '/assets/logos/bluebridge.png',
   className = '',
   fill,
   width,

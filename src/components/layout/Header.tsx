@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <Link className="site-logo" href="/" onClick={handleLinkClick}>
-        <Image src="/assets/psa-logo.png" alt="PSA" width={69} height={48} priority />
+        <Image src="/assets/logos/psa-logo.png" alt="PSA" width={69} height={48} priority />
       </Link>
 
       {/* Desktop Navigation */}
