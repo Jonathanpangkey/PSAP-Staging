@@ -69,6 +69,7 @@ export default function ServiceCarousel({ photos = [], alt = '' }: ServiceCarous
           >
             <PayloadImage
               image={photoObj.photo}
+              size="card"
               fill
               style={{ objectFit: 'cover' }}
               alt={`${alt} - Photo ${idx + 1}`}

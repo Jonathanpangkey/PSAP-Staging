@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Service } from '@/payload-types'
 import ServiceCarousel from '../ui/ServiceCarousel'
+import ScrollReveal from '../ui/ScrollReveal'
 
 interface CoreServicesProps {
   services: Service[]
@@ -34,34 +35,38 @@ export default function CoreServices({ services }: CoreServicesProps) {
   return (
     <section className="sec">
       <div className="container">
-        <div className="eyebrow">Our Core Services</div>
-        <h2 className="display md">Our Core Services</h2>
-        <p className="lead sec-lead">
-          Five disciplines, one accountable engineering team — sized to scope, on the schedule your
-          project needs.
-        </p>
+        <ScrollReveal>
+          <div className="eyebrow">Our Core Services</div>
+          <h2 className="display md">Our Core Services</h2>
+          <p className="lead sec-lead">
+            Five disciplines, one accountable engineering team — sized to scope, on the schedule your
+            project needs.
+          </p>
+        </ScrollReveal>
 
         <div className="service-grid">
           {displayServices.map((service, index) => {
             return (
-              <article className="service-card" key={service.id || service.title}>
-                <div className="photo" style={{ position: 'relative' }}>
-                  <ServiceCarousel photos={service.photos} alt={service.title} />
-                  <span className="tag">Service · 0{(currentPage - 1) * itemsPerPage + index + 1}</span>
-                  <span className="note">{service.title}</span>
-                </div>
-                <div className="body">
-                  <h4>{service.title}</h4>
-                  <p>
-                    {service.description && service.description.length > 140
-                      ? service.description.slice(0, 140).trim() + '...'
-                      : service.description}
-                  </p>
-                  <Link className="btn-link" href="/services">
-                    Learn More
-                  </Link>
-                </div>
-              </article>
+              <ScrollReveal key={service.id || service.title} delay={index * 100}>
+                <article className="service-card">
+                  <div className="photo" style={{ position: 'relative' }}>
+                    <ServiceCarousel photos={service.photos} alt={service.title} />
+                    <span className="tag">Service · 0{(currentPage - 1) * itemsPerPage + index + 1}</span>
+                    <span className="note">{service.title}</span>
+                  </div>
+                  <div className="body">
+                    <h4>{service.title}</h4>
+                    <p>
+                      {service.description && service.description.length > 140
+                        ? service.description.slice(0, 140).trim() + '...'
+                        : service.description}
+                    </p>
+                    <Link className="btn-link" href="/services">
+                      Learn More
+                    </Link>
+                  </div>
+                </article>
+              </ScrollReveal>
             )
           })}
         </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Project } from '@/payload-types'
 import ServiceCarousel from '../ui/ServiceCarousel'
+import ScrollReveal from '../ui/ScrollReveal'
 
 interface RecentProjectsProps {
   projects: Project[]
@@ -12,33 +13,37 @@ export default function RecentProjects({ projects }: RecentProjectsProps) {
   return (
     <section className="sec">
       <div className="container">
-        <div className="eyebrow">Recent Projects</div>
-        <h2 className="display md">Recent Projects</h2>
-        <p className="lead sec-lead">
-          A snapshot of recent work delivered across the Asia-Pacific Marine Oil and Gas industry.
-        </p>
+        <ScrollReveal>
+          <div className="eyebrow">Recent Projects</div>
+          <h2 className="display md">Recent Projects</h2>
+          <p className="lead sec-lead">
+            A snapshot of recent work delivered across the Asia-Pacific Marine Oil and Gas industry.
+          </p>
+        </ScrollReveal>
 
         <div className="recent-grid">
-          {displayProjects.map((project) => {
+          {displayProjects.map((project, idx) => {
             return (
-              <article className="service-card" key={project.id || project.title}>
-                <div className="photo" style={{ position: 'relative' }}>
-                  <ServiceCarousel photos={project.photos} alt={project.title} />
-                  <span className="tag">Project</span>
-                  <span className="note">{project.title}</span>
-                </div>
-                <div className="body">
-                  <h4>{project.title}</h4>
-                  <p>
-                    {project.description && project.description.length > 140
-                      ? project.description.slice(0, 140).trim() + '...'
-                      : project.description}
-                  </p>
-                  <Link className="btn-link" href="/projects">
-                    Learn More
-                  </Link>
-                </div>
-              </article>
+              <ScrollReveal key={project.id || project.title} delay={idx * 100}>
+                <article className="service-card">
+                  <div className="photo" style={{ position: 'relative' }}>
+                    <ServiceCarousel photos={project.photos} alt={project.title} />
+                    <span className="tag">Project</span>
+                    <span className="note">{project.title}</span>
+                  </div>
+                  <div className="body">
+                    <h4>{project.title}</h4>
+                    <p>
+                      {project.description && project.description.length > 140
+                        ? project.description.slice(0, 140).trim() + '...'
+                        : project.description}
+                    </p>
+                    <Link className="btn-link" href="/projects">
+                      Learn More
+                    </Link>
+                  </div>
+                </article>
+              </ScrollReveal>
             )
           })}
         </div>
@@ -52,4 +57,5 @@ export default function RecentProjects({ projects }: RecentProjectsProps) {
     </section>
   )
 }
+
 

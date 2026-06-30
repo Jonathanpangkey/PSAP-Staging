@@ -37,18 +37,18 @@ export default function Hero({ stats, homeAsset }: HeroProps) {
       <div className="hero-grid-lines" aria-hidden="true" />
       <div className="hero-grid">
         <div>
-          <div className="eyebrow">Marine Oil and Gas · Contractor</div>
-          <h1 className="display lg">
+          <div className="eyebrow animate-fade-in-up">Marine Oil and Gas · Contractor</div>
+          <h1 className="display lg animate-fade-in-up animation-delay-100">
             Marine Oil and Gas,
             <br />
             <em>Engineered to Last</em>.
           </h1>
-          <p className="lead hero-lead">
+          <p className="lead hero-lead animate-fade-in-up animation-delay-200">
             PSA delivers blasting &amp; painting, manpower supply, scaffolding, equipment, and
             HVAC / mechanical-electrical work for Marine Oil and Gas operators across the
             Asia-Pacific.
           </p>
-          <div className="hero-cta-group">
+          <div className="hero-cta-group animate-fade-in-up animation-delay-300">
             <Link className="btn btn-primary" href="/contact">
               Contact Us <span className="arrow">→</span>
             </Link>
@@ -56,7 +56,7 @@ export default function Hero({ stats, homeAsset }: HeroProps) {
               Explore Services <span className="arrow">→</span>
             </Link>
           </div>
-          <div className="hero-trust">
+          <div className="hero-trust animate-fade-in-up animation-delay-400">
             <span>{stats.projectsCompleted}+ Projects Completed</span>
             <span>Batam, Indonesia</span>
             <span>{stats.yearsOfExpertise}+ Years of Expertise</span>

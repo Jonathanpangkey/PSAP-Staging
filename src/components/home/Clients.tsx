@@ -29,16 +29,17 @@ export default function Clients({ clients }: ClientsProps) {
               }}
             >
               {client.logo && (
-                <div style={{ position: 'relative', width: '120px', height: '40px' }}>
+                <div style={{ position: 'relative', width: '100%', height: '75px' }}>
                   <PayloadImage
                     image={client.logo}
+                    size="logo"
                     fill
                     style={{ objectFit: 'contain' }}
                     alt={client.name}
                   />
                 </div>
               )}
-              <span style={{ fontSize: '15px', fontWeight: 600, color: 'var(--color-fg-muted)' }}>
+              <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-fg-muted)', marginTop: '8px' }}>
                 {client.name}
               </span>
             </div>

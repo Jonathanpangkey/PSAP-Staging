@@ -34,10 +34,8 @@ export default async function CTABand() {
           {pdfUrl ? (
             <a
               className="btn btn-ghost-light"
-              href={pdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              download
+              href="/api/download-profile"
+              download="PT_Perintis_Sarana_Astra_Company_Profile.pdf"
             >
               Download Profile
             </a>
