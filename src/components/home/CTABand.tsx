@@ -1,5 +1,6 @@
 import { fetchContactInfo } from '@/lib/queries/contact-info'
 import { getWhatsAppLink } from '@/lib/utils'
+import DownloadButton from '../ui/DownloadButton'
 
 export default async function CTABand() {
   const contactInfo = await fetchContactInfo()
@@ -32,13 +33,7 @@ export default async function CTABand() {
             Get In Touch <span className="arrow">→</span>
           </a>
           {pdfUrl ? (
-            <a
-              className="btn btn-ghost-light"
-              href="/api/download-profile"
-              download="PT_Perintis_Sarana_Astra_Company_Profile.pdf"
-            >
-              Download Profile
-            </a>
+            <DownloadButton />
           ) : (
             <a
               className="btn btn-ghost-light"
