@@ -7,7 +7,6 @@ export default function AboutHero() {
             <span>Home</span>
             <span>About Us</span>
           </div>
-          <div className="eyebrow">About Us</div>
           <h1 className="display md">About Us</h1>
           <p className="lead sec-lead">
             Marine Oil and Gas service work — built project by project, platform by platform,

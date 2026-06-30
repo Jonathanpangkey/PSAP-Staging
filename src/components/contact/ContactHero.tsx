@@ -7,7 +7,6 @@ export default function ContactHero() {
             <span>Home</span>
             <span>Contact Us</span>
           </div>
-          <div className="eyebrow">Contact Us</div>
           <h1 className="display md">Contact Us</h1>
           <p className="lead sec-lead">
             Get in touch with our team for quotes, scope discussions, or project mobilisation

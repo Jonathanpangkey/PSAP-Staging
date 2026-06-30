@@ -9,7 +9,6 @@ export default function ServicesHero() {
             <span>Home</span>
             <span>Our Services</span>
           </div>
-          <div className="eyebrow">Our Services</div>
           <h1 className="display md">Our Services</h1>
           <p className="lead sec-lead">
             Five specialised disciplines to support your Marine Oil and Gas operations —
