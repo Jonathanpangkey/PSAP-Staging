@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, ReactNode } from 'react'
 interface ScrollRevealProps {
   children: ReactNode
   className?: string
-  delay?: number // in ms
+  delay?: number
 }
 
 export default function ScrollReveal({ children, className = '', delay = 0 }: ScrollRevealProps) {
@@ -21,15 +21,14 @@ export default function ScrollReveal({ children, className = '', delay = 0 }: Sc
           } else {
             setIsVisible(true)
           }
-          // Once it reveals, we don't need to observe it anymore
           if (ref.current) {
             observer.unobserve(ref.current)
           }
         }
       },
       {
-        threshold: 0.05, // trigger early
-        rootMargin: '0px 0px -50px 0px', // trigger slightly before entering fully
+        threshold: 0.05,
+        rootMargin: '0px 0px -50px 0px',
       }
     )
 

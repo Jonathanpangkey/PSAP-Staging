@@ -32,7 +32,6 @@ export default function Clients({ clients }: ClientsProps) {
                 <div style={{ position: 'relative', width: '100%', height: '75px' }}>
                   <PayloadImage
                     image={client.logo}
-                    size="logo"
                     fill
                     style={{ objectFit: 'contain' }}
                     alt={client.name}

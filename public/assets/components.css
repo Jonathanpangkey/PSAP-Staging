@@ -1308,7 +1308,7 @@
     color: #fff;
   }
 
-  /* Viewport scroll reveal animations */
+  /* Reveal Animations */
   .reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -1324,7 +1324,7 @@
   .reveal-delay-300 { transition-delay: 300ms; }
   .reveal-delay-400 { transition-delay: 400ms; }
 
-  /* Page load fadeInUp animations for Hero */
+  /* Hero Animations */
   @keyframes fadeInUp {
     from {
       opacity: 0;

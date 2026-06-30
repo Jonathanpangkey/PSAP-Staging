@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react'
 
 interface CountUpProps {
   end: number
-  duration?: number // in ms
+  duration?: number
 }
 
 export default function CountUp({ end, duration = 2000 }: CountUpProps) {

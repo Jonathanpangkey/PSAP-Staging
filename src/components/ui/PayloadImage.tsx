@@ -11,7 +11,7 @@ interface PayloadImageProps extends Omit<Partial<ImageProps>, 'src' | 'alt'> {
 export default function PayloadImage({
   image,
   alt = '',
-  fallbackSrc = '/assets/bluebridge.png', // a default logo/image fallback
+  fallbackSrc = '/assets/bluebridge.png',
   className = '',
   fill,
   width,
@@ -19,13 +19,11 @@ export default function PayloadImage({
   size,
   ...rest
 }: PayloadImageProps) {
-  // If we have a Media object with a valid URL
   const isMediaObject = image && typeof image === 'object' && 'url' in image
   
-  // Resolve size-specific URL if requested and available, otherwise fallback to main URL
   let mediaUrl = null
   if (isMediaObject) {
-    const mediaObj = image as any // Cast to any to prevent TS errors on dynamically defined size fields
+    const mediaObj = image as any
     if (size && mediaObj.sizes && mediaObj.sizes[size] && mediaObj.sizes[size].url) {
       mediaUrl = mediaObj.sizes[size].url
     } else {
@@ -37,13 +35,8 @@ export default function PayloadImage({
   const mediaWidth = isMediaObject ? ((image as Media).width ?? undefined) : undefined
   const mediaHeight = isMediaObject ? ((image as Media).height ?? undefined) : undefined
 
-  // Determine final image source
   const src = mediaUrl || fallbackSrc
-
-  // Styling for placeholder if we are using fallback and don't want it to look broken
   const finalClass = `${className} ${!mediaUrl ? 'img-placeholder' : ''}`.trim()
-
-  // If we don't have absolute dimensions or fill, provide sensible defaults
   const imageWidth = fill ? undefined : (width ?? mediaWidth ?? 800)
   const imageHeight = fill ? undefined : (height ?? mediaHeight ?? 600)
 
