@@ -45,21 +45,6 @@ export async function submitInquiryAction(
     }
   }
 
-  // Map service value to enum options
-  let serviceValue:
-    | 'blasting-painting'
-    | 'manpower-supply'
-    | 'scaffolding'
-    | 'equipment-supply'
-    | 'hvac-mechanical-electrical'
-    | 'custom-scope' = 'blasting-painting'
-
-  if (service === 'Manpower Supply') serviceValue = 'manpower-supply'
-  else if (service === 'Scaffolding') serviceValue = 'scaffolding'
-  else if (service === 'Equipment Supply') serviceValue = 'equipment-supply'
-  else if (service === 'HVAC / Mechanical-Electrical') serviceValue = 'hvac-mechanical-electrical'
-  else if (service === 'Custom Scope') serviceValue = 'custom-scope'
-
   try {
     const payload = await getPayloadClient()
     await payload.create({
@@ -69,7 +54,7 @@ export async function submitInquiryAction(
         company,
         email,
         phone,
-        serviceOfInterest: serviceValue,
+        serviceOfInterest: service,
         message,
       },
     })

@@ -9,6 +9,7 @@ export const Inquiries: CollectionConfig = {
   admin: {
     useAsTitle: 'fullName',
     hideAPIURL: true,
+    defaultColumns: ['fullName', 'company', 'email', 'phone', 'serviceOfInterest', 'createdAt'],
   },
   access: {
     create: () => false,
@@ -43,17 +44,9 @@ export const Inquiries: CollectionConfig = {
     },
     {
       name: 'serviceOfInterest',
-      type: 'select',
+      type: 'text',
       required: true,
       label: 'Service of Interest',
-      options: [
-        { label: 'Blasting & Painting', value: 'blasting-painting' },
-        { label: 'Manpower Supply', value: 'manpower-supply' },
-        { label: 'Scaffolding', value: 'scaffolding' },
-        { label: 'Equipment Supply', value: 'equipment-supply' },
-        { label: 'HVAC / Mechanical-Electrical', value: 'hvac-mechanical-electrical' },
-        { label: 'Custom Scope / Other', value: 'custom-scope' },
-      ],
     },
     {
       name: 'message',

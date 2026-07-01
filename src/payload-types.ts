@@ -260,13 +260,7 @@ export interface Inquiry {
   company: string;
   email: string;
   phone: string;
-  serviceOfInterest:
-    | 'blasting-painting'
-    | 'manpower-supply'
-    | 'scaffolding'
-    | 'equipment-supply'
-    | 'hvac-mechanical-electrical'
-    | 'custom-scope';
+  serviceOfInterest: string;
   message: string;
   updatedAt: string;
   createdAt: string;
