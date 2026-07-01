@@ -8,6 +8,7 @@ export const Projects: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
+    hideAPIURL: true,
   },
   fields: [
     {

@@ -1,4 +1,6 @@
 import { CompanyStat } from '@/payload-types'
+import ScrollReveal from '../ui/ScrollReveal'
+import CountUp from '../ui/CountUp'
 
 interface AboutAchievementsProps {
   stats: CompanyStat
@@ -7,40 +9,44 @@ interface AboutAchievementsProps {
 export default function AboutAchievements({ stats }: AboutAchievementsProps) {
   const items = [
     {
-      num: String(stats.yearsOfExpertise),
+      value: stats.yearsOfExpertise,
       label: 'Years of Expertise',
-      sub: 'Established marine engineering posture',
+      sub: 'Established Marine and Oil & Gas engineering posture',
     },
     {
-      num: String(stats.projectsCompleted),
+      value: stats.projectsCompleted,
       label: 'Projects Completed',
-      sub: 'Across the Asia-Pacific region',
+      sub: 'Serving Marine and Oil & Gas industrial sector',
     },
     {
-      num: String(stats.skilledManpower),
+      value: stats.skilledManpower,
       label: 'Skilled Manpower',
-      sub: 'Marine engineering workforce',
+      sub: 'Marine and Oil & Gas engineering workforce',
     },
   ]
 
   return (
     <section className="sec why">
       <div className="container">
-        <div className="eyebrow">Our Achievements</div>
-        <h2 className="display md">Our Achievements</h2>
-        <p className="lead sec-lead">
-          Proof points, in plain numbers.
-        </p>
+        <ScrollReveal>
+          <div className="eyebrow">Our Achievements</div>
+          <h2 className="display md">Our Achievements</h2>
+          <p className="lead sec-lead">
+            Proof points, in plain numbers.
+          </p>
+        </ScrollReveal>
         <div className="ach-grid ach-grid--3 ach-grid--tiles">
-          {items.map((stat) => (
-            <div className="ach-tile" key={stat.label}>
-              <div className="ach-tile-num">
-                {stat.num}<em>+</em>
+          {items.map((stat, idx) => (
+            <ScrollReveal key={stat.label} delay={idx * 150} className="ach-reveal">
+              <div className="ach-tile">
+                <div className="ach-tile-num">
+                  <CountUp end={stat.value} /><em>+</em>
+                </div>
+                <div className="ach-tile-rule" />
+                <div className="ach-tile-lab">{stat.label}</div>
+                <div className="ach-tile-sub">{stat.sub}</div>
               </div>
-              <div className="ach-tile-rule" />
-              <div className="ach-tile-lab">{stat.label}</div>
-              <div className="ach-tile-sub">{stat.sub}</div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

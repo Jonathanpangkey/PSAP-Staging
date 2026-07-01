@@ -1,15 +1,21 @@
 'use client'
 
-import { useActionState } from 'react'
+import { useActionState, useState } from 'react'
 import { submitInquiryAction, SubmissionResult } from '@/lib/actions/inquiry'
+import { Service } from '@/payload-types'
+
+interface ContactFormProps {
+  services?: Service[]
+}
 
 const initialState: SubmissionResult = {
   success: false,
   message: '',
 }
 
-export default function ContactForm() {
+export default function ContactForm({ services = [] }: ContactFormProps) {
   const [state, formAction, isPending] = useActionState(submitInquiryAction, initialState)
+  const [service, setService] = useState('')
 
   return (
     <div className="form-card">
@@ -108,13 +114,21 @@ export default function ContactForm() {
 
         <div className="field full">
           <label htmlFor="service">Service of Interest</label>
-          <select id="service" name="service" defaultValue="Blasting & Painting" disabled={isPending}>
-            <option>Blasting &amp; Painting</option>
-            <option>Manpower Supply</option>
-            <option>Scaffolding</option>
-            <option>Equipment Supply</option>
-            <option>HVAC / Mechanical-Electrical</option>
-            <option>Custom Scope</option>
+          <select
+            id="service"
+            name="service"
+            value={service}
+            onChange={(e) => setService(e.target.value)}
+            style={{ color: service ? 'var(--color-fg)' : 'var(--color-fg-subtle)' }}
+            disabled={isPending}
+            required
+          >
+            <option value="" disabled hidden>Select a Service</option>
+            {services.map((svc) => (
+              <option key={svc.id} value={svc.title}>
+                {svc.title}
+              </option>
+            ))}
           </select>
         </div>
 

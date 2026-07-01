@@ -3,6 +3,9 @@ import { GlobalConfig } from 'payload'
 export const ContactInfo: GlobalConfig = {
   slug: 'contact-info',
   label: 'Contact Information',
+  admin: {
+    hideAPIURL: true,
+  },
   fields: [
     {
       name: 'emailInfo',

@@ -39,8 +39,7 @@ export default function CoreServices({ services }: CoreServicesProps) {
           <div className="eyebrow">Our Core Services</div>
           <h2 className="display md">Our Core Services</h2>
           <p className="lead sec-lead">
-            Five disciplines, one accountable engineering team — sized to scope, on the schedule your
-            project needs.
+            One accountable engineering team, sized to scope. Coordinated across every discipline your project needs.
           </p>
         </ScrollReveal>
 

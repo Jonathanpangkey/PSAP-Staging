@@ -34,19 +34,16 @@ export default function Hero({ stats, homeAsset }: HeroProps) {
         )}
       </div>
 
-      <div className="hero-grid-lines" aria-hidden="true" />
       <div className="hero-grid">
         <div>
-          <div className="eyebrow animate-fade-in-up">Marine Oil and Gas · Contractor</div>
+          <div className="eyebrow animate-fade-in-up">Marine, Oil and Gas · Contractor</div>
           <h1 className="display lg animate-fade-in-up animation-delay-100">
-            Marine Oil and Gas,
+            Marine, Oil &amp; Gas,
             <br />
             <em>Engineered to Last</em>.
           </h1>
           <p className="lead hero-lead animate-fade-in-up animation-delay-200">
-            PSA delivers blasting &amp; painting, manpower supply, scaffolding, equipment, and
-            HVAC / mechanical-electrical work for Marine Oil and Gas operators across the
-            Asia-Pacific.
+            PSA delivers variety of engineering supports for Marine and Oil &amp; Gas industry.
           </p>
           <div className="hero-cta-group animate-fade-in-up animation-delay-300">
             <Link className="btn btn-primary" href="/contact">

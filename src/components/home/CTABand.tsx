@@ -19,8 +19,7 @@ export default async function CTABand() {
             Ready to move<br />your project <em>forward</em>?
           </h2>
           <p className="lead light sec-lead">
-            Contact our team today to scope your blasting, scaffolding, manpower, or HVAC
-            requirement and receive a customised quote.
+            Contact our team today to scope your engineering requirements and receive a customised quote.
           </p>
         </div>
         <div className="cta-btn-group">

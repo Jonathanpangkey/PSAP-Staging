@@ -9,19 +9,18 @@ export default function AboutIntro() {
           <div>
             <div className="eyebrow">About PSA</div>
             <h2 className="display md">
-              <em>Trusted</em> in Marine<br />Oil and Gas.
+              <em>Trusted</em> in Marine<br />and Oil &amp; Gas
             </h2>
             <p className="lead sec-lead">
-              PT Perintis Sarana Astra specialises in marine contractor work for the Marine Oil
-              and Gas industry. We deliver blasting &amp; painting, manpower supply, scaffolding,
-              equipment, and HVAC / mechanical-electrical work.
+              PT Perintis Sarana Astra specialises in engineering contractor work for the Marine and
+              Oil &amp; Gas industry.
             </p>
             <p className="lead sec-lead--sm">
-              Founded in Batam, we have established ourselves as a Marine Oil and Gas contractor,
-              supported by ISO 9001:2015 certified processes.
+              Founded in Batam, we have established ourselves and supported by ISO 9001:2015
+              certified processes.
             </p>
             <p className="lead sec-lead--sm">
-              We work in five connected disciplines under one accountable project team —
+              We work in multiple disciplines under one accountable project team,
               coordinated from our Batam base.
             </p>
             <div className="sec-cta">
@@ -39,7 +38,6 @@ export default function AboutIntro() {
               sizes="(max-width: 980px) 100vw, 50vw"
             />
             <span className="tag">About Us</span>
-            <span className="note">Yard floor, Batam HQ</span>
           </div>
         </div>
       </div>

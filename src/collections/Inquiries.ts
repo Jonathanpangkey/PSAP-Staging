@@ -8,6 +8,13 @@ export const Inquiries: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'fullName',
+    hideAPIURL: true,
+  },
+  access: {
+    create: () => false,
+    update: () => false,
+    read: ({ req }) => !!req.user,
+    delete: ({ req }) => !!req.user,
   },
   fields: [
     {

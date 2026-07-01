@@ -59,10 +59,9 @@ export default function ServicesList({ services }: ServicesListProps) {
         <div className="svc-custom">
           <div>
             <div className="eyebrow">Need Something Else?</div>
-            <h3>Custom Marine Engineering Scopes</h3>
+            <h3>Custom Marine and Oil &amp; Gas Engineering Scopes</h3>
             <p className="svc-custom-desc">
-              We routinely take on bespoke scopes outside this list — fabrication, retrofit
-              programmes, and emergency dry-dock support.
+              We take on scopes outside this list, tailored to project requirements.
             </p>
           </div>
           <Link className="btn btn-primary" href="/contact">

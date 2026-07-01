@@ -17,7 +17,7 @@ export default function RecentProjects({ projects }: RecentProjectsProps) {
           <div className="eyebrow">Recent Projects</div>
           <h2 className="display md">Recent Projects</h2>
           <p className="lead sec-lead">
-            A snapshot of recent work delivered across the Asia-Pacific Marine Oil and Gas industry.
+            A snapshot of recent work delivered across Marine and Oil &amp; Gas industry.
           </p>
         </ScrollReveal>
 

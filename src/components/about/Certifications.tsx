@@ -18,17 +18,35 @@ export default function Certifications({ certifications }: CertificationsProps) 
           engineering work.
         </p>
         <div className="cert-list">
-          {certifications.map((cert) => (
-            <article className="cert-list-card" key={cert.id || cert.title}>
-              <div className="photo" style={{ position: 'relative' }}>
-                {cert.image && (
-                  <PayloadImage
-                    image={cert.image}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    alt={cert.title}
-                  />
-                )}
+          {certifications.map((cert) => {
+            const isMediaObject = cert.image && typeof cert.image === 'object' && 'url' in cert.image
+            const isPortrait =
+              isMediaObject &&
+              (cert.image as any).width &&
+              (cert.image as any).height &&
+              (cert.image as any).height > (cert.image as any).width
+
+            return (
+              <article className="cert-list-card" key={cert.id || cert.title}>
+                <div className="photo" style={{ position: 'relative' }}>
+                  {cert.image && (
+                    <PayloadImage
+                      image={cert.image}
+                      fill
+                      style={
+                        isPortrait
+                          ? {
+                              objectFit: 'contain',
+                              padding: '12px',
+                              filter: 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08))',
+                            }
+                          : {
+                              objectFit: 'cover',
+                            }
+                      }
+                      alt={cert.title}
+                    />
+                  )}
                 <span className="tag">Certificate</span>
                 {!cert.image && <span className="arrowmark">image →</span>}
                 <span className="note">{cert.title}</span>
@@ -39,7 +57,8 @@ export default function Certifications({ certifications }: CertificationsProps) 
                 <p>{cert.description}</p>
               </div>
             </article>
-          ))}
+          )
+        })}
 
           {/* CMS helper slot shown if there is only 1 certification */}
           {certifications.length <= 1 && (

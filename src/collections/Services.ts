@@ -8,6 +8,7 @@ export const Services: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
+    hideAPIURL: true,
   },
   fields: [
     {

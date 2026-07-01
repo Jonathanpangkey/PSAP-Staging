@@ -9,7 +9,7 @@ export default function ProjectsHero() {
           </div>
           <h1 className="display md">Our Projects</h1>
           <p className="lead sec-lead">
-            Showcasing recent projects across the Asia-Pacific Marine Oil and Gas industry.
+            A snapshot of recent work delivered across Marine and Oil &amp; Gas industry.
           </p>
         </div>
       </div>

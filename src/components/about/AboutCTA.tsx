@@ -14,7 +14,7 @@ export default async function AboutCTA() {
             Ready to discuss<br />your next <em>project</em>?
           </h2>
           <p className="lead light sec-lead">
-            Talk to our team about your next Marine Oil and Gas scope.
+            Talk to our team about your next Marine and Oil &amp; Gas scope.
           </p>
         </div>
         <a

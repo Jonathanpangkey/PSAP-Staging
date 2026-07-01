@@ -11,17 +11,17 @@ export default function Achievements({ stats }: AchievementsProps) {
     {
       value: stats.yearsOfExpertise,
       label: 'Years of Expertise',
-      sub: 'Established marine engineering posture',
+      sub: 'Established Marine and Oil & Gas engineering posture',
     },
     {
       value: stats.projectsCompleted,
       label: 'Projects Completed',
-      sub: 'Across the Asia-Pacific region',
+      sub: 'Serving Marine and Oil & Gas industrial sector',
     },
     {
       value: stats.skilledManpower,
       label: 'Skilled Manpower',
-      sub: 'Marine engineering workforce',
+      sub: 'Marine and Oil & Gas engineering workforce',
     },
   ]
 

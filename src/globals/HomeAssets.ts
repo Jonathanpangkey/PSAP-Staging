@@ -3,6 +3,9 @@ import { GlobalConfig } from 'payload'
 export const HomeAssets: GlobalConfig = {
   slug: 'home-assets',
   label: 'Home Page Assets',
+  admin: {
+    hideAPIURL: true,
+  },
   fields: [
     {
       name: 'heroImage',

@@ -8,9 +8,9 @@ const pillars = [
       'Years of work across marine engineering disciplines, from yard floor to platform deck.',
   },
   {
-    title: 'One Team, Five Disciplines',
+    title: 'One Team, Every Discipline',
     description:
-      'Blasting, manpower, scaffolding, equipment, HVAC — coordinated under a single accountable project team.',
+      'Coordinated under a single accountable project team.',
   },
   {
     title: 'Strategically Positioned',

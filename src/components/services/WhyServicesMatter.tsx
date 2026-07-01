@@ -1,18 +1,18 @@
 const matters = [
   {
-    ico: 'A',
+    kicker: 'A',
     title: 'Specialised Expertise',
     description:
-      'Each discipline is led by people with established marine engineering experience — depth over breadth.',
+      'Each discipline is led by people with established Marine and Oil & Gas engineering experience.',
   },
   {
-    ico: 'B',
+    kicker: 'B',
     title: 'Equipment Capability',
     description:
       'A working fleet kept ready for mobilisation, supporting consistent project execution across disciplines.',
   },
   {
-    ico: 'C',
+    kicker: 'C',
     title: 'Reliable Delivery',
     description: 'Schedules respect operational windows. We commit to what we can hold to.',
   },
@@ -29,12 +29,12 @@ export default function WhyServicesMatter() {
         <p className="lead sec-lead">
           Three commitments that shape how we approach every project.
         </p>
-        <div className="matter-grid">
+        <div className="pillars">
           {matters.map((item) => (
-            <div className="matter-card" key={item.ico}>
-              <div className="ico">{item.ico}</div>
+            <div className="pillar" key={item.kicker}>
+              <div className="kicker">{item.kicker}</div>
               <h4>{item.title}</h4>
-              <p>{item.description}</p>
+              <p className="pillar-desc">{item.description}</p>
             </div>
           ))}
         </div>

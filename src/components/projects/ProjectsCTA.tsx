@@ -14,7 +14,7 @@ export default async function ProjectsCTA() {
             Interested in <em>working</em><br />with us?
           </h2>
           <p className="lead light sec-lead">
-            Let's discuss how PSA can support your next Marine Oil and Gas project.
+            Let's discuss how PSA can support your next Marine and Oil &amp; Gas project.
           </p>
         </div>
         <a

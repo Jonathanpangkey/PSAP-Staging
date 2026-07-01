@@ -1,9 +1,13 @@
 import { fetchContactInfo } from '@/lib/queries/contact-info'
+import { fetchServices } from '@/lib/queries/services'
 import ContactForm from './ContactForm'
 import { getWhatsAppLink } from '@/lib/utils'
 
 export default async function ContactContent() {
-  const contactInfo = await fetchContactInfo()
+  const [contactInfo, services] = await Promise.all([
+    fetchContactInfo(),
+    fetchServices(),
+  ])
 
   return (
     <section className="sec">
@@ -13,7 +17,7 @@ export default async function ContactContent() {
           <div>
             <h3 className="display sm contact-heading">PT Perintis Sarana Astra</h3>
             <p className="lead contact-lead">
-              Marine Oil and Gas contractor serving operators across the Asia-Pacific.
+              Marine and Oil &amp; Gas contractor serving operators.
             </p>
 
             {/* Email */}
@@ -22,7 +26,7 @@ export default async function ContactContent() {
               <div className="row">
                 <div className="ico">@</div>
                 <div>
-                  <div className="label">
+                   <div className="label">
                     <a href={`mailto:${contactInfo.emailInfo}`}>{contactInfo.emailInfo}</a>
                   </div>
                   <div className="sub">{contactInfo.emailInfoSubdesc}</div>
@@ -60,7 +64,11 @@ export default async function ContactContent() {
               <div className="row">
                 <div className="ico">☎</div>
                 <div>
-                  <div className="label">{contactInfo.phoneOffice}</div>
+                  <div className="label">
+                    <a href={`tel:${contactInfo.phoneOffice.replace(/\s+/g, '')}`}>
+                      {contactInfo.phoneOffice}
+                    </a>
+                  </div>
                   <div className="sub">{contactInfo.phoneOfficeSubdesc}</div>
                 </div>
               </div>
@@ -72,7 +80,15 @@ export default async function ContactContent() {
               <div className="row">
                 <div className="ico">⌖</div>
                 <div>
-                  <div className="label">PT Perintis Sarana Astra HQ</div>
+                  <div className="label">
+                    <a
+                      href={contactInfo.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      PT Perintis Sarana Astra HQ
+                    </a>
+                  </div>
                   <div className="sub" style={{ whiteSpace: 'pre-line' }}>
                     {contactInfo.address}
                   </div>
@@ -98,7 +114,7 @@ export default async function ContactContent() {
 
           {/* Right — form */}
           <div>
-            <ContactForm />
+            <ContactForm services={services} />
           </div>
         </div>
       </div>

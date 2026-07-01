@@ -9,8 +9,7 @@ export default function AboutHero() {
           </div>
           <h1 className="display md">About Us</h1>
           <p className="lead sec-lead">
-            Marine Oil and Gas service work — built project by project, platform by platform,
-            from our Batam base.
+            Marine and Oil &amp; Gas service work. Built project by project, platform by platform.
           </p>
         </div>
       </div>

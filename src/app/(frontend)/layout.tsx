@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'PT Perintis Sarana Astra',
   description: 'Marine Oil and Gas contractor, based in Batam, Indonesia.',
   icons: {
-    icon: '/assets/logos/favicon-square-white.png',
+    icon: '/assets/logos/favicon-square.png',
   },
 }
 

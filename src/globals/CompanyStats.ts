@@ -14,6 +14,9 @@ const validateInteger = (value: any) => {
 export const CompanyStats: GlobalConfig = {
   slug: 'company-stats',
   label: 'Company Statistics',
+  admin: {
+    hideAPIURL: true,
+  },
   fields: [
     {
       name: 'yearsOfExpertise',

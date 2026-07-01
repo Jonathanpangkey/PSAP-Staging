@@ -12,7 +12,7 @@ export default function Clients({ clients }: ClientsProps) {
         <div className="eyebrow">Our Clients</div>
         <h2 className="display md">Our Clients</h2>
         <p className="lead sec-lead">
-          Long-standing partnerships with the operators and yards driving the Asia-Pacific Oil &amp; Gas industry.
+          Long-standing partnerships with the operators and yards driving Marine and Oil &amp; Gas industry.
         </p>
         <div className="clients-row">
           {clients.map((client) => (

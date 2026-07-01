@@ -8,6 +8,7 @@ export const Certifications: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
+    hideAPIURL: true,
   },
   fields: [
     {
