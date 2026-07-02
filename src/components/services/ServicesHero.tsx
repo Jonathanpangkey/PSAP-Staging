@@ -11,8 +11,7 @@ export default function ServicesHero() {
           </div>
           <h1 className="display md">Our Services</h1>
           <p className="lead sec-lead">
-            Five specialised disciplines to support your Marine Oil and Gas operations —
-            under one accountable engineering team.
+            One accountable engineering team, sized to scope. Coordinated across every discipline your project needs.
           </p>
         </div>
         <div>
